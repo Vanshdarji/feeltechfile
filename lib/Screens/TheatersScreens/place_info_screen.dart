@@ -17,184 +17,269 @@ class _MovieTheaterInfoState extends State<MovieTheaterInfo> {
   Widget build(BuildContext context) {
     double main_Width = MediaQuery.of(context).size.width;
     double main_Height = MediaQuery.of(context).size.height;
-    return SafeArea(child: Scaffold(
+    return SafeArea(
+        child: Scaffold(
       backgroundColor: Color(0xff1f203c),
-      body: Container(
-        child: SingleChildScrollView(
-          child: Expanded(child: Column(
-            children: [
-            InkWell(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>ReviewScreen()));
-              },
-              child: Container(
-                width: main_Width,
-                height: main_Height * 0.50,
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(25),
-                      bottomRight: Radius.circular(25)),
-                  gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment(0.8, 1),
-                    colors: <Color>[
-                      const Color(0xFFF09869),
-                      const Color(0xFF7D29C7),
-                    ],
-                    tileMode: TileMode.mirror,
-                  ),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    IconButton(onPressed: (){
+      body: Column(
+        children: [
+          Container(
+            height: main_Height * 0.065,
+            width: main_Width,
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment(0.8, 1),
+                colors: <Color>[
+                  const Color(0xFFF09869),
+                  Color.fromARGB(255, 191, 102, 148),
+                ],
+                tileMode: TileMode.mirror,
+              ),
+            ),
+            child: Row(
+              children: [
+                IconButton(
+                    onPressed: () {
                       Navigator.of(context).pop();
-                    }, icon: Icon(Icons.arrow_back_ios,size: 20,color: Colors.white,)).box.margin(EdgeInsets.only(top: 15,left: 10)).make(),
-                Column(
-                    // mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(left: 40),
-                        width: main_Width*0.16,
-                        child: Row(
+                    },
+                    icon: Icon(
+                      Icons.arrow_back_ios,
+                      size: 18,
+                      color: Colors.white,
+                    )),
+              ],
+            ),
+          ),
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(children: [
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ReviewScreen()));
+                  },
+                  child: Container(
+                    width: main_Width,
+                    height: main_Height * 0.50,
+                    decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(25),
+                          bottomRight: Radius.circular(25)),
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment(0.8, 1),
+                        colors: <Color>[
+                          const Color(0xFFF09869),
+                          const Color(0xFF7D29C7),
+                        ],
+                        tileMode: TileMode.mirror,
+                      ),
+                    ),
+                    child: Column(
+                      // mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(left: 40),
+                          width: main_Width * 0.16,
+                          child: Row(
+                            children: [
+                              Text(
+                                "4.5",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16),
+                              ),
+                              10.widthBox,
+                              Icon(
+                                Icons.star,
+                                color: Colors.white,
+                                size: 16,
+                              ),
+                            ],
+                          )
+                              .box
+                              .padding(EdgeInsets.all(3))
+                              .roundedSM
+                              .border(color: Colors.white)
+                              .make(),
+                        ),
+                        10.heightBox,
+                        Row(
                           children: [
+                            Padding(padding: EdgeInsets.only(left: 40)),
                             Text(
-                              "4.5",
+                              "Palace Albany Theater",
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 16),
+                                  fontSize: 18),
                             ),
-                            10.widthBox,
-                            Icon(Icons.star,color: Colors.white,size: 16,),
                           ],
-                        ).box
-                            .padding(EdgeInsets.all(3))
-                            .roundedSM
-                            .border(color: Colors.white)
-                            .make(),
+                        ),
+                        5.heightBox,
+                        Row(
+                          children: [
+                            Padding(padding: EdgeInsets.only(left: 40)),
+                            Text(
+                              "3D, Digital Media & Ultra HD",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 12),
+                            )
+                          ],
+                        ),
+                        20.heightBox,
+                      ],
+                    ),
+                  ),
+                ),
+                10.heightBox,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  child: Column(
+                    children: [
+                      Text(
+                        "Surprisingly, there is a very vocal faction of the design community that wants to se filler text banished to the original sources for whencecame Perhaps not surprisingly, in an era of endless quibbling, there an equally vocal contingent of designers leaping end the use of the time-honored tradition of greeking.",
+                        maxLines: 5,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(color: Colors.white, fontSize: 9,fontWeight: FontWeight.w500),
                       ),
                       10.heightBox,
-                      Row(
-                        children: [
-                          Padding(padding: EdgeInsets.only(left: 40)),
-                          Text(
-                            "Palace Albany Theater",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize:18),
-                          ),
-                        ],
+                      Text(
+                        "Historical, multi-level 1,000-seat theater featuring concerts, movies & other events.",
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.left,
+                        style: TextStyle(color: Colors.white, fontSize: 10,fontWeight: FontWeight.w500),
                       ),
-                      5.heightBox,
+                    ],
+                  ),
+                ),
+                10.heightBox,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
                       Row(
                         children: [
-                          Padding(padding: EdgeInsets.only(left: 40)),
+                          RatingBar.builder(
+                            initialRating: 3,
+                            minRating: 1,
+                            // direction: Axis.horizontal,
+                            allowHalfRating: true,
+                            itemCount: 5,
+                            itemSize: 15,
+                            itemBuilder: (context, _) => Container(
+                              child: Icon(
+                                Icons.star,
+                                size: 12,
+                                color: Colors.amber,
+                              ),
+                            ),
+                            onRatingUpdate: (rating) {
+                              print(rating);
+                            },
+                          ),
                           Text(
-                            "3D, Digital Media & Ultra HD",
+                            "(4.5)",
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 12),
+                                fontSize: 10,
+                                fontWeight: FontWeight.w500),
                           )
                         ],
                       ),
-                      20.heightBox,
+                      Text(
+                        "158 Reviews",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 10,
+                            fontWeight: FontWeight.w500),
+                      )
                     ],
-                  )
-                  ],
+                  ),
                 ),
-              ),
-            ),
-            10.heightBox,
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
-              child: Column(
-                children: [
-                  Text("Surprisingly, there is a very vocal faction of the design community that wants to se filler text banished to the original sources for whencecame Perhaps not surprisingly, in an era of endless quibbling, there an equally vocal contingent of designers leaping end the use of the time-honored tradition of greeking.",
-                  textAlign: TextAlign.left,style: TextStyle(color: Colors.white,fontSize: 9),),
-                  10.heightBox,
-                  Text("Historical, multi-level 1,000-seat theater featuring concerts, movies & other events.",
-                  textAlign: TextAlign.left, style: TextStyle(color: Colors.white,fontSize: 10),),
-                ],
-              ),
-            ),
-              10.heightBox,
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                      RatingBar.builder(
-                      initialRating: 3,
-                      minRating: 1,
-                      // direction: Axis.horizontal,
-                      allowHalfRating: true,
-                      itemCount: 5,
-                      itemSize: 15,
-                      itemBuilder: (context, _) => Container(
-                        child: Icon(
-                          Icons.star,
-                          size: 12,
-                          color: Colors.amber,
+                20.heightBox,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Address:",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 13,
+                            fontWeight: FontWeight.w500),
+                      ),
+                      30.widthBox,
+                      Flexible(
+                        child: Text(
+                          "630 S Broadway, Los Angeles, CA 90014, USA",
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 10,
+                              fontWeight: FontWeight.w400),
                         ),
-                      ),
-                      onRatingUpdate: (rating) {
-                        print(rating);
-                      },
-                      ),
-                        Text("(4.5)",style: TextStyle(color: Colors.white,fontSize: 10,fontWeight: FontWeight.w500),)
-                      ],
-                    ),
-                    Text("158 Reviews",style: TextStyle(color: Colors.white,fontSize: 10,fontWeight: FontWeight.w500),)
-                    
-                  ],
+                      )
+                    ],
+                  ),
                 ),
-              ),
-              20.heightBox,
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                10.heightBox,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text("Address:",style: TextStyle(color: Colors.white,fontSize: 14,fontWeight: FontWeight.w500),),
-                    Text("630 S Broadway, Los Angeles, CA 90014, USA",style: TextStyle(color: Colors.white,fontSize: 12,fontWeight: FontWeight.w300),)
+                    Padding(padding: EdgeInsets.only(left: 25)),
+                    Text(
+                      "Phone:",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 13,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    40.widthBox,
+                    Text(
+                      "(+1) 505-343-7300",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 10,
+                          fontWeight: FontWeight.w400),
+                    )
                   ],
                 ),
-              ),
-              10.heightBox,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Padding(padding: EdgeInsets.only(left: 25)),
-                  Text("Phone:",style: TextStyle(color: Colors.white,fontSize: 14,fontWeight: FontWeight.w500),),
-                  40.widthBox,
-                  Text("(+1) 505-343-7300",style: TextStyle(color: Colors.white,fontSize: 12,fontWeight: FontWeight.w300),)
-                ],
-              ),
-              Divider(
-                height: 30,
-                color: Color.fromARGB(255, 58, 58, 58),
-              ),
-              20.heightBox,
-              Container(
-                width: main_Width*0.85,
-                height: main_Height*0.25,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(40),
-                  image: DecorationImage(image: AssetImage(Birds),fit: BoxFit.cover)
+                Divider(
+                  height: 30,
+                  color: Color.fromARGB(255, 58, 58, 58),
                 ),
-              ),
-              10.heightBox,
-              Text("The Flying Birds",style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.w500),),
-              20.heightBox,
-            ]
-          )),
-        ),
+                20.heightBox,
+                Container(
+                  width: main_Width * 0.85,
+                  height: main_Height * 0.25,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(40),
+                      image: DecorationImage(
+                          image: AssetImage(Birds), fit: BoxFit.cover)),
+                ),
+                10.heightBox,
+                Text(
+                  "The Flying Birds",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500),
+                ),
+                20.heightBox,
+              ]),
+            ),
+          ),
+        ],
       ),
     ));
   }

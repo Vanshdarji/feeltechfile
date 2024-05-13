@@ -40,11 +40,10 @@ class _MoviesScreenState extends State<MoviesScreen> {
     return SafeArea(
         child: Scaffold(
       backgroundColor: Color(0xff1f203c),
-      body: SingleChildScrollView(
-        child: Container(
-          child: Column(
-            children: [
-              Padding(
+      body: Column(
+        children: [
+          Container(
+            child:Padding(
                 padding: const EdgeInsets.all(2.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -52,7 +51,11 @@ class _MoviesScreenState extends State<MoviesScreen> {
                     Row(
                       children: [
                         IconButton(
-                          icon: Icon(Icons.arrow_back_ios, color: Colors.white,size: 18,),
+                          icon: Icon(
+                            Icons.arrow_back_ios,
+                            color: Colors.white,
+                            size: 18,
+                          ),
                           onPressed: () {
                             Navigator.of(context).pop();
                           },
@@ -99,210 +102,239 @@ class _MoviesScreenState extends State<MoviesScreen> {
                     ),
                   ],
                 ),
-              ),
-              // 10.heightBox,
-              Row(
-                children: [
-                  50.widthBox,
-                  Text(
-                    "Trending",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 22),
-                  ),
-                  10.widthBox,
-                  TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => MoviesList()));
-                      },
-                      child: Text(
-                        "Popular",
-                        style: TextStyle(color: Colors.white),
-                      )),
-                ],
-              ),
-              SingleChildScrollView(
+              ), 
+          ),
+          Expanded(
+            child: SingleChildScrollView(
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    CarouselSlider.builder(
-                      itemCount: carouselItems.length,
-                      options: CarouselOptions(
-                        height: main_Height * 0.65,
-                        autoPlay: true,
-                        enlargeCenterPage: true,
-                        viewportFraction: 0.7,
-                        aspectRatio: 16 / 9,
-                        onPageChanged: (index, _) {
-                          setState(() {
-                            _currentIndex = index;
-                          });
-                        },
-                      ),
-                      itemBuilder: (context, index, realIndex) {
-                        final item = carouselItems[index];
-                        return Container(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
+                    SingleChildScrollView(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Row(
                             children: [
-                              Container(
-                                height: 320,
-                                width: 350,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(30),
-                                    image: DecorationImage(
-                                        image: AssetImage(item.imagePath),
-                                        fit: BoxFit.cover)),
-                              ),
-                              10.heightBox,
-                              Row(
-                                children: [
-                                  Text(
-                                    item.rating,
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 10),
-                                  )
-                                      .box
-                                      .roundedSM
-                                      .padding(EdgeInsets.all(2))
-                                      .border(color: Colors.white)
-                                      .make(),
-                                  10.widthBox,
-                                  Text(
-                                    item.rate,
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w500),
-                                  )
-                                ],
-                              ),
-                              3.heightBox,
+                              50.widthBox,
                               Text(
-                                item.name,
+                                "Trending",
                                 style: TextStyle(
                                     color: Colors.white,
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 20),
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 22),
                               ),
-                              Text(
-                                item.Subtitle,
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 14),
-                              )
+                              10.widthBox,
+                              TextButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => MoviesList()));
+                                  },
+                                  child: Text(
+                                    "Popular",
+                                    style: TextStyle(color: Colors.white),
+                                  )),
                             ],
                           ),
-                        );
-                      },
+                          CarouselSlider.builder(
+                            itemCount: carouselItems.length,
+                            options: CarouselOptions(
+                              height: 500,
+                              padEnds: false,
+                              enlargeCenterPage: true,
+                              disableCenter: true,
+                              enlargeFactor: 0.4,
+                              aspectRatio: 2.0,
+                              viewportFraction: 0.65,
+                              scrollDirection: Axis.horizontal,
+                              onPageChanged: (index, _) {
+                                setState(() {
+                                  _currentIndex = index;
+                                });
+                              },
+                            ),
+                            itemBuilder: (context, index, realIndex) {
+                              final item = carouselItems[index];
+                              return
+                                  // padding: EdgeInsets.only(right: 20),
+                                  // decoration: BoxDecoration(border: Border.all(color: Colors.white)),
+                                  Padding(
+                                padding: const EdgeInsets.only(left: 30),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      height: 400,
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(20),
+                                          image: DecorationImage(
+                                              image: AssetImage(item.imagePath),
+                                              fit: BoxFit.cover)),
+                                    ),
+                                    10.heightBox,
+                                    Row(
+                                      children: [
+                                        Container(
+                                          padding: EdgeInsets.only(top: 1,right: 10,left: 10,bottom: 6),
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.all(Radius.circular(8)),
+                                            border: Border.all(color: Colors.white),
+                                          ),
+                                          child: Text(
+                                            item.rating,
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 10,
+                                            ),
+                                          ),
+                                        ),
+                                        10.widthBox,
+                                        Text(
+                                          item.rate,
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.w500),
+                                        )
+                                      ],
+                                    ),
+                                    3.heightBox,
+                                    Text(
+                                      "${item.name} Marvels fantasy",
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 20),
+                                    ),
+                                    Text(
+                                      item.Subtitle,
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 14),
+                                    )
+                                  ],
+                                ),
+                              );
+                            },
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: carouselItems.map((item) {
+                              int index = carouselItems.indexOf(item);
+                              return Container(
+                                width: 8.0,
+                                height: 8.0,
+                                margin: EdgeInsets.symmetric(
+                                    vertical: 10.0, horizontal: 2.0),
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: _currentIndex == index
+                                      ? Colors.white
+                                      : Colors.grey,
+                                ),
+                              );
+                            }).toList(),
+                          ),
+                        ],
+                      ),
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: carouselItems.map((item) {
-                        int index = carouselItems.indexOf(item);
-                        return Container(
-                          width: 8.0,
-                          height: 8.0,
-                          margin: EdgeInsets.symmetric(
-                              vertical: 10.0, horizontal: 2.0),
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: _currentIndex == index
-                                ? Colors.white
-                                : Colors.grey,
-                          ),
-                        );
-                      }).toList(),
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Padding(padding: EdgeInsets.only(left: 25)),
+                        Text(
+                          "Trailers",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600),
+                        ),
+                      ],
+                    ),
+                    10.heightBox,
+                    Container(
+                      padding: EdgeInsets.only(left: 10),
+                      height: main_Height * 0.30,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: images.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Container(
+                                  width: main_Width * 0.45,
+                                  height: main_Height * 0.20,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    image: DecorationImage(
+                                      image: AssetImage(images[index]),
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 8.0),
+                                Text(
+                                  names[index],
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14),
+                                ),
+                                5.heightBox,
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      rating[index],
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    10.widthBox,
+                                    Container(
+                                      padding: EdgeInsets.only(top: 1,right: 10,left: 10,bottom: 6),
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.all(Radius.circular(8)),
+                                            border: Border.all(color: Colors.white),
+                                          ),
+                                      child: Row(
+                                        children: [
+                                          Icon(
+                                            Icons.star,
+                                            color: Colors.white,
+                                            size: 10,
+                                          ),
+                                          2.widthBox,
+                                          Text(
+                                            "4.3",
+                                            style: TextStyle(
+                                              fontSize: 10,
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                          );
+                        },
+                      ),
                     ),
                   ],
                 ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Padding(padding: EdgeInsets.only(left: 25)),
-                  Text(
-                    "Trailers",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600),
-                  ),
-                ],
-              ),
-              10.heightBox,
-              Container(
-                padding: EdgeInsets.only(left: 10),
-                height: main_Height * 0.30,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: images.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Container(
-                            width: main_Width * 0.45,
-                            height: main_Height * 0.20,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              image: DecorationImage(
-                                image: AssetImage(images[index]),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 8.0),
-                          Text(
-                            names[index],
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 14),
-                          ),
-                          5.heightBox,
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Text(
-                                rating[index],
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              10.widthBox,
-                              Row(
-                                children: [
-                                  Icon(
-                                    Icons.star,
-                                    color: Colors.white,
-                                    size: 10,
-                                  ),
-                                  Text(
-                                    "4.3",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ],
-                              ).box.roundedSM.border(color: Colors.white).make()
-                            ],
-                          )
-                        ],
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ],
+            ),
           ),
-        ),
+        ],
       ),
     ));
   }
