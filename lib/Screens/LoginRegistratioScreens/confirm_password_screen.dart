@@ -85,7 +85,7 @@ class _ConfirmPasswordState extends State<ConfirmPassword> {
                                 color: Colors.white),
                             validator: (value) {
                               if (value == null || value.isEmpty) {
-                                return 'Password can\'t be empty';
+                                return 'Enter Your Password';
                               }
                               if (value.length < 8) {
                                 return 'Password must be at least 8 characters';
@@ -157,7 +157,7 @@ class _ConfirmPasswordState extends State<ConfirmPassword> {
                                 color: Colors.white),
                             validator: (value) {
                               if (value == null || value.isEmpty) {
-                                return 'Password can\'t be empty';
+                                return 'Enter Your Password';
                               }
                               if (value.length < 8) {
                                 return 'Password must be at least 8 characters';
@@ -282,11 +282,8 @@ class _ConfirmPasswordState extends State<ConfirmPassword> {
                       ])
                           .box
                           .color(Color(0xff2e3350))
-                          .margin(EdgeInsets.only(
-                          left: main_Width * 0.06,
-                          right: main_Width * 0.06))
-                          .padding(EdgeInsets.only(
-                          left: main_Width * 0.03, right: main_Width * 0.03))
+                          .margin(EdgeInsets.symmetric(horizontal: 20))
+                          .padding(EdgeInsets.symmetric(horizontal: 18))
                           .rounded
                           .make(),
                       20.heightBox,

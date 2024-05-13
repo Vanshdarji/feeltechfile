@@ -86,7 +86,7 @@ class _GetStartScreenState extends State<GetStartScreen> {
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
-                                fontSize: main_Width * 0.05),
+                                fontSize: 18),
                           )),
                     )),
                 30.heightBox,

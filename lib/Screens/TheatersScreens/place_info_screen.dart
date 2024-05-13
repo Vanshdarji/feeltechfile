@@ -52,168 +52,133 @@ class _MovieTheaterInfoState extends State<MovieTheaterInfo> {
                       Navigator.of(context).pop();
                     }, icon: Icon(Icons.arrow_back_ios,size: 20,color: Colors.white,)).box.margin(EdgeInsets.only(top: 15,left: 10)).make(),
                 Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
+                    // mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Row(
-                        children: [
-                          Text(
-                            "4.5",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: main_Width * 0.04),
-                          ).box.padding(EdgeInsets.only(left: main_Width*0.02)).make(),
-                          10.widthBox,
-                          Icon(Icons.star,color: Colors.white,size: 18,),
-                        ],
-                      ).box
-                          .margin(EdgeInsets.only(left: main_Width*0.1,right: main_Width*0.7))
-                          .padding(EdgeInsets.all(3))
-                          .roundedSM
-                          .border(color: Colors.white)
-                          .make(),
+                      Container(
+                        margin: EdgeInsets.only(left: 40),
+                        width: main_Width*0.16,
+                        child: Row(
+                          children: [
+                            Text(
+                              "4.5",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16),
+                            ),
+                            10.widthBox,
+                            Icon(Icons.star,color: Colors.white,size: 16,),
+                          ],
+                        ).box
+                            .padding(EdgeInsets.all(3))
+                            .roundedSM
+                            .border(color: Colors.white)
+                            .make(),
+                      ),
                       10.heightBox,
                       Row(
-                        // mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
+                          Padding(padding: EdgeInsets.only(left: 40)),
                           Text(
                             "Palace Albany Theater",
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
-                                fontSize: main_Width * 0.05),
-                          ).box.margin(EdgeInsets.only(left: 40)).make(),
+                                fontSize:18),
+                          ),
                         ],
                       ),
                       5.heightBox,
                       Row(
                         children: [
+                          Padding(padding: EdgeInsets.only(left: 40)),
                           Text(
                             "3D, Digital Media & Ultra HD",
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: main_Width * 0.03),
+                                fontSize: 12),
                           )
                         ],
-                      ).box.margin(EdgeInsets.only(left: main_Width*0.11)).make(),
+                      ),
                       20.heightBox,
                     ],
                   )
                   ],
                 ),
               ),
-              // child: Container(
-              // child: Column(
-              //   mainAxisAlignment: MainAxisAlignment.end,
-              //   children: [
-              //     Row(
-              //       children: [
-              //         Text(
-              //           "4.5",
-              //           style: TextStyle(
-              //               color: Colors.white,
-              //               fontWeight: FontWeight.bold,
-              //               fontSize: main_Width * 0.04),
-              //         ).box.padding(EdgeInsets.only(left: main_Width*0.02)).make(),
-              //         10.widthBox,
-              //         Icon(Icons.star,color: Colors.white,size: 18,),
-              //       ],
-              //     ).box
-              //         .margin(EdgeInsets.only(left: main_Width*0.1,right: main_Width*0.7))
-              //         .padding(EdgeInsets.all(3))
-              //         .roundedSM
-              //         .border(color: Colors.white)
-              //         .make(),
-              //     10.heightBox,
-              //     Row(
-              //       // mainAxisAlignment: MainAxisAlignment.spaceAround,
-              //       children: [
-              //         Text(
-              //           "Palace Albany Theater",
-              //           style: TextStyle(
-              //               color: Colors.white,
-              //               fontWeight: FontWeight.bold,
-              //               fontSize: main_Width * 0.05),
-              //         ).box.margin(EdgeInsets.only(left: 40)).make(),
-              //       ],
-              //     ),
-              //     5.heightBox,
-              //     Row(
-              //       children: [
-              //         Text(
-              //           "3D, Digital Media & Ultra HD",
-              //           style: TextStyle(
-              //               color: Colors.white,
-              //               fontSize: main_Width * 0.03),
-              //         )
-              //       ],
-              //     ).box.margin(EdgeInsets.only(left: main_Width*0.11)).make(),
-              //     20.heightBox,
-              //   ],
-              // )),
             ),
             10.heightBox,
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text("Surprisingly, there is a very vocal faction of the design community that wants to se filler text banished to the original sources for whencecame Perhaps not surprisingly, in an era of endless quibbling, there an equally vocal contingent of designers leaping end the use of the time-honored tradition of greeking.",
-                textAlign: TextAlign.left,style: TextStyle(color: Colors.white,fontSize: 9),).box.margin(EdgeInsets.only(right: 30,left: 30)).make(),
-                10.heightBox,
-                Text("Historical, multi-level 1,000-seat theater featuring concerts, movies & other events.",
-                 textAlign: TextAlign.left, style: TextStyle(color: Colors.white,fontSize: 10),).box.margin(EdgeInsets.only(right: 41,left: 30)).make(),
-              ],
-            ),
-              10.heightBox,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25),
+              child: Column(
                 children: [
-                  Row(
-                    children: [
-                    RatingBar.builder(
-                    initialRating: 3,
-                    minRating: 1,
-                    // direction: Axis.horizontal,
-                    allowHalfRating: true,
-                    itemCount: 5,
-                    itemSize: 15,
-                    itemBuilder: (context, _) => Container(
-                      // width: main_Width*0.70,
-                      child: Icon(
-                        Icons.star,
-                        color: Colors.amber,
-                      ),
-                    ),
-                    onRatingUpdate: (rating) {
-                      print(rating);
-                    },
-                    ).box.margin(EdgeInsets.only(left: 28)).make(),
-                      Text("(4.5)",style: TextStyle(color: Colors.white,fontSize: 10,fontWeight: FontWeight.w500),)
-                    ],
-                  ),
-                  Text("158 Reviews",style: TextStyle(color: Colors.white,fontSize: 10,fontWeight: FontWeight.w500),)
-                  .box.margin(EdgeInsets.only(right: 20)).make()
+                  Text("Surprisingly, there is a very vocal faction of the design community that wants to se filler text banished to the original sources for whencecame Perhaps not surprisingly, in an era of endless quibbling, there an equally vocal contingent of designers leaping end the use of the time-honored tradition of greeking.",
+                  textAlign: TextAlign.left,style: TextStyle(color: Colors.white,fontSize: 9),),
+                  10.heightBox,
+                  Text("Historical, multi-level 1,000-seat theater featuring concerts, movies & other events.",
+                  textAlign: TextAlign.left, style: TextStyle(color: Colors.white,fontSize: 10),),
                 ],
               ),
+            ),
+              10.heightBox,
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                      RatingBar.builder(
+                      initialRating: 3,
+                      minRating: 1,
+                      // direction: Axis.horizontal,
+                      allowHalfRating: true,
+                      itemCount: 5,
+                      itemSize: 15,
+                      itemBuilder: (context, _) => Container(
+                        child: Icon(
+                          Icons.star,
+                          size: 12,
+                          color: Colors.amber,
+                        ),
+                      ),
+                      onRatingUpdate: (rating) {
+                        print(rating);
+                      },
+                      ),
+                        Text("(4.5)",style: TextStyle(color: Colors.white,fontSize: 10,fontWeight: FontWeight.w500),)
+                      ],
+                    ),
+                    Text("158 Reviews",style: TextStyle(color: Colors.white,fontSize: 10,fontWeight: FontWeight.w500),)
+                    
+                  ],
+                ),
+              ),
               20.heightBox,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Padding(padding: EdgeInsets.only(left: 20)),
-                  Text("Address:",style: TextStyle(color: Colors.white,fontSize: 14,fontWeight: FontWeight.w500),),
-                  Text("630 S Broadway, Los Angeles, CA 90014, USA",style: TextStyle(color: Colors.white,fontSize: 12,fontWeight: FontWeight.w300),)
-                ],
-              ).box.margin(EdgeInsets.only(right: 30)).make(),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("Address:",style: TextStyle(color: Colors.white,fontSize: 14,fontWeight: FontWeight.w500),),
+                    Text("630 S Broadway, Los Angeles, CA 90014, USA",style: TextStyle(color: Colors.white,fontSize: 12,fontWeight: FontWeight.w300),)
+                  ],
+                ),
+              ),
               10.heightBox,
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text("Phone:",style: TextStyle(color: Colors.white,fontSize: 14,fontWeight: FontWeight.w500),)
-                  .box.margin(EdgeInsets.only(left: 35)).make(),
+                  Padding(padding: EdgeInsets.only(left: 25)),
+                  Text("Phone:",style: TextStyle(color: Colors.white,fontSize: 14,fontWeight: FontWeight.w500),),
+                  40.widthBox,
                   Text("(+1) 505-343-7300",style: TextStyle(color: Colors.white,fontSize: 12,fontWeight: FontWeight.w300),)
                 ],
-              ).box.margin(EdgeInsets.only(right: 170)).make(),
+              ),
               Divider(
                 height: 30,
+                color: Color.fromARGB(255, 58, 58, 58),
               ),
               20.heightBox,
               Container(

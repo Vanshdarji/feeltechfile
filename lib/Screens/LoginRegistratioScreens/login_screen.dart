@@ -65,11 +65,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       style: TextStyle(fontSize: 14, letterSpacing: 2,color: Colors.white),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Email can\'t be empty';
+                          return 'Enter Valid Email';
                         }
                         if (!value.contains(
                             RegExp(r'[@]'))) {
-                          return 'Email must contain at least @ special character';
+                          return 'Enter Valid Email';
                         }
                         return null;
                       },
@@ -91,7 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             style: TextStyle(fontSize: 14, letterSpacing: 2,color: Colors.white),
                             validator: (value) {
                               if (value == null || value.isEmpty) {
-                                return 'Password can\'t be empty';
+                                return 'Enter Your Password';
                               }
                               if (value.length < 8) {
                                 return 'Password must be at least 8 characters';
@@ -226,11 +226,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   ])
                           .box
                           .color(Color(0xff2e3350))
-                          // .width(main_Width*0.60)
-                          .margin(EdgeInsets.only(
-                              left: main_Width * 0.06,
-                              right: main_Width * 0.06))
-                          .padding(EdgeInsets.only(left: main_Width*0.03,right: main_Width*0.03))
+                          .margin(EdgeInsets.symmetric(horizontal: 25))
+                          .padding(EdgeInsets.symmetric(horizontal: 12))
                           .rounded
                           .make()).box.bottomRounded().make(),
                   20.heightBox,

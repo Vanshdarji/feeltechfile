@@ -75,11 +75,11 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                   style: TextStyle(fontSize: 14, letterSpacing: 2,color: Colors.white),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Email can\'t be empty';
+                      return 'Enter Valid Email';
                     }
                     if (!value.contains(
                         RegExp(r'[@]'))) {
-                      return 'Email must contain at least @ special character';
+                      return 'Enter Valid Email';
                     }
                     return null;
                   },
@@ -157,9 +157,8 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
             ])
                 .box
                 .color(Color(0xff2e3350))
-                .margin(EdgeInsets.all(main_Width * 0.06,))
-                .padding(EdgeInsets.only(
-                    left: main_Width * 0.03, right: main_Width * 0.03))
+                .margin(EdgeInsets.all(24))
+                .padding(EdgeInsets.symmetric(horizontal: 18))
                 .rounded
                 .make(),
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [

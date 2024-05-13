@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vanshtask1/Screens/BottomScreens/bottom_screen.dart';
-import 'package:vanshtask1/Screens/HomeScreens/profile_screen.dart';
-import 'package:vanshtask1/Screens/MoviesScreens/movie_screen.dart';
-import 'package:vanshtask1/Screens/SplashScreen/splash_screen.dart';
-import 'package:vanshtask1/Screens/TheatersScreens/place_screen.dart';
-import 'package:vanshtask1/Screens/example.dart';
+import 'package:vanshtask1/Screens/TicketScreen/payment_screen.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -20,7 +15,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home:SplashScreen(),
+      home:PaymentScreen(),
     );
   }
 }

@@ -49,45 +49,51 @@ class _MainScreenState extends State<MainScreen> {
     double main_Height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
-          appBar: AppBar(
-            leading: IconButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              icon: Icon(
-                Icons.arrow_back_ios,
-                size: 18,
-              ),
-            ),
-            backgroundColor: Color(0xff1f203c),
-            iconTheme: IconThemeData(color: Colors.white),
-            title: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text(
-                  "Profile",
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
-              ],
-            ),
-            actions: [
-              TextButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => EditScreen()));
-                  },
-                  child: Text(
-                    "Edit",
-                    style: TextStyle(color: Colors.purple, fontSize: 16),
-                  ))
-            ],
-          ),
           backgroundColor: Color(0xff1f203c),
           body: SingleChildScrollView(
             child: Column(
               children: [
+                Padding(
+                    padding: const EdgeInsets.all(2.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            IconButton(
+                              icon: Icon(
+                                Icons.arrow_back_ios,
+                                color: Colors.white,
+                                size: 18,
+                              ),
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                            ),
+                            Text(
+                              "Profile",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 20,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 15),
+                          child: InkWell(
+                            onTap: (){
+                              Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => EditScreen()));
+                            },
+                            child: Text("Edit",style: TextStyle(color: Colors.purple,fontSize: 16),)),
+                        )
+                      ],
+                    ),
+                  ),
                 SizedBox(
                   height: 20,
                 ),
@@ -386,199 +392,9 @@ class _MainScreenState extends State<MainScreen> {
                       ],
                     ),
                   ),
-                )
-                //                30.heightBox,
-                //                Column(
-                //                  children: [
-                //                    20.heightBox,
-                //                    Column(
-                //                      children: [
-                //                        Row(
-                //                          children: [
-                //                            InkWell(
-                //                              onTap:() {
-                //                                Navigator.push(context, MaterialPageRoute(builder: (context)=>LanguageScreen()));
-                //                              },
-                //                              child: Row(
-                //                                children: [
-                //                                  Text("Languages",style: TextStyle(color: Color(0xffb0b6ba),fontSize: 12,fontWeight: FontWeight.bold),).box.padding(EdgeInsets.only(left: 10)).make(),
-                //                                  170.widthBox,
-                //                                  Text("English",style: TextStyle(color: Colors.white,fontSize: 15),),
-                //                                  5.widthBox,
-                //                                  Icon(Icons.arrow_forward_ios,color: Colors.white,size: 10,)
-                //                                ],
-                //                              ),
-                //                            )
-                //                          ],
-                //                        )
-                //                          ],
-                //                        ),
-                //                        Divider(),
-                //                        Row(
-                //                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //                          children: [
-                //                            TextButton(
-                //                                onPressed: () {
-                //                                  Navigator.push(
-                //                                      context,
-                //                                      MaterialPageRoute(
-                //                                          builder: (context) => LocationScreen()));
-                //                                },
-                //                                child: Text(
-                //                                  "Location",
-                //                                  style: TextStyle(
-                //                                      fontWeight: FontWeight.bold,
-                //                                      color: Color(0xffb0b6ba),fontSize: 13),
-                //                                )),
-                //                            GestureDetector(
-                //                              onTap: () {
-                //                                setState(() {
-                //                                  box = !box;
-                //                                });
-                //                              },
-                //                              child: Stack(
-                //                                alignment:
-                //                                box ? Alignment.centerRight : Alignment.centerLeft,
-                //                                children: [
-                //                                  Container(
-                //                                    width: main_Width*0.12,
-                //                                    height: main_Height*0.03,
-                //                                    alignment: Alignment.center, // Alignment as center
-                //                                    decoration: BoxDecoration(
-                //                                      // TODO: you can change here gradient color
-                //                                      gradient: LinearGradient(
-                //                                        colors: box
-                //                                            ? [
-                //                                          const Color(0xFFF09869),
-                //                                          const Color(0xFFC729B2),
-                //                                        ]
-                //                                            : [Colors.grey, Colors.grey],
-                //                                      ),
-                //                                      borderRadius:
-                //                                      const BorderRadius.all(Radius.circular(40)),
-                //                                    ),
-                //                                  ),
-                //                                  Container(
-                //                                    margin: EdgeInsets.all(4),
-                //                                    height: main_Height*0.03,
-                //                                    width: main_Width*0.05,
-                //                                    decoration: const BoxDecoration(
-                //                                        shape: BoxShape.circle, color: Colors.white),
-                //                                  ),
-                //                                ],
-                //                              ),
-                //                            ),
-              ],
-              //                        ),
-              //                        Divider(),
-              //                        Row(
-              //                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //                          children: [
-              //                            TextButton(
-              //                                onPressed: () {},
-              //                                child: Text("Notification",
-              //                                    style: TextStyle(
-              //                                        color: Color(0xffb0b6ba),fontSize: 13))),
-              //                            GestureDetector(
-              //                              onTap: () {
-              //                                // To change the state of isSwitchOn variable
-              //                                setState(() {
-              //                                  toggle = !toggle;
-              //                                });
-              //                              },
-              //                              // TODO: Here you can see border of Switch if isSwitchOn is true
-              //                              // else gradient color of Switch
-              //                              child: Stack(
-              //                                alignment:
-              //                                toggle ? Alignment.centerRight : Alignment.centerLeft,
-              //                                children: [
-              //                                  Container(
-              //                                    width: main_Width*0.12,
-              //                                    height: main_Height*0.03,
-              //                                    alignment: Alignment.center, // Alignment as center
-              //                                    decoration: BoxDecoration(
-              //                                      // TODO: you can change here gradient color
-              //                                      gradient: LinearGradient(
-              //                                        colors: toggle
-              //                                            ? [
-              //                                          const Color(0xFFF09869),
-              //                                          const Color(0xFFC729B2),
-              //                                        ]
-              //                                            : [Colors.grey, Colors.grey],
-              //                                      ),
-              //                                      borderRadius:
-              //                                      const BorderRadius.all(Radius.circular(40)),
-              //                                    ),
-              //                                  ),
-              //                                  Container(
-              //                                    margin: EdgeInsets.all(4),
-              //                                    height: main_Height*0.03,
-              //                                    width: main_Width*0.05,
-              //                                    decoration: const BoxDecoration(
-              //                                        shape: BoxShape.circle, color: Colors.white),
-              //                                  ),
-              //                                ],
-              //                              ),
-              //                            ),
-              //                          ],
-              //                        ),
-              //                        Divider(),
-              //                        Row(
-              //                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //                          children: [
-              //                            TextButton(
-              //                                onPressed: () {
-              //                                  Navigator.push(
-              //                                      context,
-              //                                      MaterialPageRoute(
-              //                                          builder: (context) => CountryScreen()));
-              //                                },
-              //                                child: Text(
-              //                                  "Country",
-              //                                  style: TextStyle(
-              //                                      color: Color(0xffb0b6ba),
-              //                                      fontSize: 15),
-              //                                )),
-              //                            Icon(
-              //                              Icons.arrow_forward_ios,
-              //                              color: Color(0xffb0b6ba),
-              //                              size: 18,
-              //                            ),
-              //                          ],
-              //                        ),
-              //                        Divider(
-              //                          height: main_Height * 0.03,
-              //                        ),
-              //                        Row(
-              //                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //                          children: [
-              //                            TextButton(
-              //                                onPressed: () {},
-              //                                child: Text("Privacy",
-              //                                    style: TextStyle(
-              //                                        color: Color(0xffb0b6ba),
-              //                                        fontSize: 15))),
-              //                            Icon(
-              //                              Icons.arrow_forward_ios,
-              //                              color: Color(0xffb0b6ba),
-              //                              size: 18,
-              //                            ),
-              //                          ],
-              //                        ),
-              //                        Divider(
-              //                          height: main_Height * 0.03,
-              //                        ),
-              //                      ],
-              //                    )
-              //                        .box
-              //                        .width(context.screenWidth - 50)
-              //                        .color(Color.fromARGB(255, 45, 47, 113))
-              //                        .margin(EdgeInsets.all(main_Width * 0.04))
-              //                        .color(Color(0xff2e3350))
-              //                        .padding(EdgeInsets.only(left: main_Width*0.03,right: main_Width*0.03))
-              //                        .rounded
-              //                        .make(),
-            ),
+                ),
+              ]
+            )
           )),
     );
   }

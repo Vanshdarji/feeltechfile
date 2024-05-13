@@ -16,7 +16,7 @@ class _TheaterSearchState extends State<TheaterSearch> {
     'Inox Theaterss',
   ];
   List<String> _FilteredItems = [];
-  int theatersearch=-1;
+  int theatersearch = -1;
 
   @override
   void initState() {
@@ -37,87 +37,97 @@ class _TheaterSearchState extends State<TheaterSearch> {
   Widget build(BuildContext context) {
     double main_Width = MediaQuery.of(context).size.width;
     double main_Height = MediaQuery.of(context).size.height;
-    return Scaffold(
-      backgroundColor: Color(0xff1f203c),
-      appBar: AppBar(
-        leading: IconButton(onPressed: (){
-          Navigator.of(context).pop();
-        },icon: Icon(Icons.arrow_back_ios,size: 18,),),
-        iconTheme: IconThemeData(color: Colors.white),
+    return SafeArea(
+      child: Scaffold(
         backgroundColor: Color(0xff1f203c),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+        body: Column(
           children: [
-            Text(
-              "Theaters",
-              style:
-                  TextStyle(color: Colors.white,fontSize: 20),
-            ),
-          ],
-        ),
-        actions: [
-          Container(
-            width: main_Width * 0.12,
-            margin: EdgeInsets.only(right: 15,top: 10),
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment(0.8, 1),
-                colors: [
-                  Color(0xFFFB6E37),
-                  Color(0xFF7D37FB)
-                ],
-                tileMode: TileMode.mirror,
-              ),
-              borderRadius: BorderRadius.circular(25.0),
-            ),
-            child: TextField(
-              controller: _SearchController,
-              onChanged: _filterList,
-              decoration: InputDecoration(
-                // hintText: 'Search...',
-                border: InputBorder.none,
-                prefixIcon: Icon(Icons.search,color: Colors.white,size: 28,)
-              ),
-            ),
-          ),
-        ],
-      ),
-      body: Container(
-        // margin: EdgeInsets.only(right: main_Width * 0.4),
-        child: ListView.builder(
-          itemCount: _FilteredItems.length,
-          itemBuilder: (context, index) {
-            return ListTile(
-              onLongPress: (){
-                setState(() {
-                  theatersearch=index;
-                });
-              },
-              title: Row(
+            Padding(
+              padding: const EdgeInsets.all(2.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  TextButton(
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => TheaterPlace()));
-                    },
-                    child: Text(
-                      _FilteredItems[index],
-                      style: TextStyle(
-                          color: Color(0xffb0b6ba), fontWeight: FontWeight.bold),
+                  Row(
+                    children: [
+                      IconButton(
+                        icon: Icon(
+                          Icons.arrow_back_ios,
+                          color: Colors.white,
+                          size: 18,
+                        ),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                      Text(
+                        "Theaters",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    width: main_Width * 0.12,
+                    margin: EdgeInsets.only(right: 15, top: 5),
+                    // child: Icon(Icons.search,color: Colors.white,),
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment(0.8, 1),
+                        colors: [Color(0xFFFB6E37), Color(0xFF7D37FB)],
+                        tileMode: TileMode.mirror,
+                      ),
+                      borderRadius: BorderRadius.circular(25.0),
+                    ),
+                    child: TextField(
+                      decoration: InputDecoration(
+                          border: InputBorder.none,
+                          prefixIcon: IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.search,
+                                color: Colors.white,
+                                size: 28,
+                              ))),
                     ),
                   ),
                 ],
               ),
-              trailing: Visibility(
-                visible:  theatersearch == index,
-                child: Icon(
-                  Icons.done,
-                  color: Colors.white,
-                ),
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              child: ListView.builder(
+                shrinkWrap: true,
+                itemCount: _FilteredItems.length,
+                itemBuilder: (context, index) {
+                  return ListTile(
+                    onTap: () {
+                      setState(() {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => TheaterPlace()));
+                      });
+                    },
+                    title: Row(
+                      children: [
+                        Text(
+                          _FilteredItems[index],
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w300,
+                              fontSize: 14),
+                        ),
+                      ],
+                    ),
+                  );
+                },
               ),
-            );
-          },
+            ),
+          ],
         ),
       ),
     );

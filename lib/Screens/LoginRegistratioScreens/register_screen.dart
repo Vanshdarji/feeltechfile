@@ -53,13 +53,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       style: TextStyle(fontSize: 14, letterSpacing: 2,color: Colors.white),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'User name can\'t be empty';
-                        }
-                        if (!value.contains(RegExp(r'[A-Z]'))) {
-                          return 'User name must contain at least one uppercase letter';
-                        }
-                        if (!value.contains(RegExp(r'[a-z]'))) {
-                          return 'User namemust contain at least one lowercase letter';
+                          return 'Enter Your User Name';
                         }
                         return null;
                       },
@@ -80,11 +74,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       style: TextStyle(fontSize: 14, letterSpacing: 2,color: Colors.white),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Email can\'t be empty';
+                          return 'Enter Valid Email';
                         }
                         if (!value.contains(
                             RegExp(r'[@]'))) {
-                          return 'Email must contain at least @ special character';
+                          return 'Enter Valid Email';
                         }
                         return null;
                       },
@@ -106,7 +100,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       style: TextStyle(fontSize: 14, letterSpacing: 2,color: Colors.white),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Password can\'t be empty';
+                          return 'Enter Your Password';
                         }
                         if (value.length < 8) {
                           return 'Password must be at least 8 characters';
@@ -227,7 +221,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       child: Text(
                         "Or Register using Social Media",
                         style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold),
+                            color: Colors.white,fontSize: 14, fontWeight: FontWeight.bold),
                       )),
                   5.heightBox,
                   Row(
@@ -250,9 +244,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ])
                     .box
                     .color(Color(0xff2e3350))
-                    .margin(EdgeInsets.all(main_Width * 0.06))
-                    .padding(EdgeInsets.only(
-                        left: main_Width * 0.03, right: main_Width * 0.03))
+                    .margin(EdgeInsets.all(24))
+                    .padding(EdgeInsets.symmetric(horizontal: 12))
                     .rounded
                     .make(),
                 Row(mainAxisAlignment: MainAxisAlignment.center, children: [

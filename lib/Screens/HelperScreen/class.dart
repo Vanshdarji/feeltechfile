@@ -1,3 +1,5 @@
+import 'package:vanshtask1/Screens/HelperScreen/images.dart';
+
 class ProfileService {
   // Singleton pattern
   static final ProfileService _instance = ProfileService._internal();
@@ -25,3 +27,40 @@ class ProfileService {
     _bio = data['bio']!;
   }
 }
+
+// Movies Screen Classs
+
+class CarouselItem {
+  final String rating;
+  final String rate;
+  final String name;
+  final String Subtitle;
+  final String imagePath;
+  CarouselItem(
+      {required this.rating,
+      required this.rate,
+      required this.name,
+      required this.imagePath,
+      required this.Subtitle});
+}
+
+final List<CarouselItem> carouselItems = [
+  CarouselItem(
+      rating: "IMBD",
+      rate: "8.9",
+      name: "The Avengers",
+      Subtitle: "Action, Thriller, Scientific",
+      imagePath: avenger),
+  CarouselItem(
+      rating: "IMBD",
+      rate: "7.5",
+      name: "The Corpsc Birde",
+      Subtitle: "Comady, Family, Adventure",
+      imagePath: cartoon),
+  CarouselItem(
+      rating: "IMBD",
+      rate: "8.0",
+      name: "The blue Birds",
+      Subtitle: "Adventure, Family, Comady",
+      imagePath: Birds),
+];

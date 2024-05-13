@@ -1,11 +1,15 @@
+import 'package:card_swiper/card_swiper.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:vanshtask1/Screens/HelperScreen/class.dart';
 import 'package:vanshtask1/Screens/HelperScreen/images.dart';
 import 'package:vanshtask1/Screens/HelperScreen/list.dart';
 import 'package:vanshtask1/Screens/RatingsScreen/favourite_screen.dart';
 import 'package:vanshtask1/Screens/MoviesScreens/list_screen.dart';
 import 'package:vanshtask1/Screens/MoviesScreens/movie_search.dart';
+import 'package:vanshtask1/Screens/example.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class MoviesScreen extends StatefulWidget {
@@ -17,125 +21,224 @@ class MoviesScreen extends StatefulWidget {
 
 class _MoviesScreenState extends State<MoviesScreen> {
   int _currentIndex = 0;
-  final List<Map<String, dynamic>> data = [
-    {'name': 'Avengers Endgame','Subtitle':'Action, Thriller, Scientific', 'image': avenger},
-    {'name': 'The Corpsc Bride','Subtitle':'Action, Comady, fun', 'image': cartoon},
-    {'name': 'Dr. Strange', 'Subtitle':'Action, Thriller, Suspense','image': strange},
-  ];
   final List<String> images = [Jungle, avenger, Birds];
   final List<String> names = [
     'TCL Chinese Theater',
     'Dolby Theaterss',
     'Inox Theaterss',
-    // Add corresponding names for the images here
   ];
   final List<String> rating = [
     'Rating',
     'Rating',
     'Rating',
-    // Add corresponding names for the images here
   ];
+
   @override
   Widget build(BuildContext context) {
     double main_Width = MediaQuery.of(context).size.width;
     double main_Height = MediaQuery.of(context).size.height;
     return SafeArea(
-      child: Scaffold(
-        backgroundColor: Color(0xff1f203c),
-        appBar: AppBar(
-          leading: IconButton(onPressed: (){
-            Navigator.of(context).pop();
-          },icon: Icon(Icons.arrow_back_ios,size: 18,),),
-          iconTheme: IconThemeData(color: Colors.white),
-          backgroundColor: Color(0xff1f203c),
-          actions: [
-            SingleChildScrollView(
-              child: Container(
-                // height: 400,
-                width: main_Width * 0.12,
-                margin: EdgeInsets.only(right: 15,top:5),
-                // child: Icon(Icons.search,color: Colors.white,),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment(0.8, 1),
-                    colors: [
-                      Color(0xFFFB6E37),
-                      Color(0xFF7D37FB)
-                    ],
-                    tileMode: TileMode.mirror,
-                  ),
-                  borderRadius: BorderRadius.circular(25.0),
-                ),
-                child: TextField(
-                  decoration: InputDecoration(
-                      border: InputBorder.none,
-                      prefixIcon: IconButton(onPressed: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>MovieSearch()));
-                      }, icon: Icon(Icons.search,color: Colors.white,size: 28,))
-                  ),
-                ),
-              ),
-            )
-          ],
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Text(
-                "Movies",
-                style:
-                TextStyle(color: Colors.white,fontSize: 20),
-              )
-            ],
-          ),
-        ),
-        body: SingleChildScrollView(
+        child: Scaffold(
+      backgroundColor: Color(0xff1f203c),
+      body: SingleChildScrollView(
+        child: Container(
           child: Column(
             children: [
-              10.heightBox,
+              Padding(
+                padding: const EdgeInsets.all(2.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        IconButton(
+                          icon: Icon(Icons.arrow_back_ios, color: Colors.white,size: 18,),
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                        ),
+                        Text(
+                          "Movies",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 20,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: main_Width * 0.12,
+                      margin: EdgeInsets.only(right: 15, top: 5),
+                      // child: Icon(Icons.search,color: Colors.white,),
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment(0.8, 1),
+                          colors: [Color(0xFFFB6E37), Color(0xFF7D37FB)],
+                          tileMode: TileMode.mirror,
+                        ),
+                        borderRadius: BorderRadius.circular(25.0),
+                      ),
+                      child: TextField(
+                        decoration: InputDecoration(
+                            border: InputBorder.none,
+                            prefixIcon: IconButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => MovieSearch()));
+                                },
+                                icon: Icon(
+                                  Icons.search,
+                                  color: Colors.white,
+                                  size: 28,
+                                ))),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              // 10.heightBox,
               Row(
                 children: [
                   50.widthBox,
-                  Text("Trending",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 22),),
+                  Text(
+                    "Trending",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 22),
+                  ),
                   10.widthBox,
-                  TextButton(onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>MoviesList()));
-                  }, child: Text("Popular",style: TextStyle(color: Colors.white),)),
+                  TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MoviesList()));
+                      },
+                      child: Text(
+                        "Popular",
+                        style: TextStyle(color: Colors.white),
+                      )),
                 ],
               ),
               SingleChildScrollView(
-                physics: BouncingScrollPhysics(),
-                child: VxSwiper.builder(
-                  itemCount:data.length,
-                  height: main_Height*0.65,
-                  aspectRatio: 12/6,
-                  viewportFraction: 0.7,
-                  initialPage: 0,
-                  enableInfiniteScroll: true,
-                  reverse: false,
-                  // autoPlay: true,
-                  // autoPlayInterval: Duration(seconds: 3),
-                  // autoPlayAnimationDuration: Duration(milliseconds: 800),
-                  // autoPlayCurve: Curves.fastOutSlowIn,
-                  enlargeCenterPage: true,
-                  onPageChanged: (index) {
-                   setState(() {
-                     _currentIndex = index;
-                     });
-                   },
-                  isFastScrollingEnabled: false,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    return _buildCarouselItem(data[index]);
-                  },
-                ).box
-                    .rounded
-                    .clip(Clip.antiAlias)
-                    .margin(EdgeInsets.symmetric(horizontal: 16))
-                    .make(),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    CarouselSlider.builder(
+                      itemCount: carouselItems.length,
+                      options: CarouselOptions(
+                        height: main_Height * 0.65,
+                        autoPlay: true,
+                        enlargeCenterPage: true,
+                        viewportFraction: 0.7,
+                        aspectRatio: 16 / 9,
+                        onPageChanged: (index, _) {
+                          setState(() {
+                            _currentIndex = index;
+                          });
+                        },
+                      ),
+                      itemBuilder: (context, index, realIndex) {
+                        final item = carouselItems[index];
+                        return Container(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                height: 320,
+                                width: 350,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(30),
+                                    image: DecorationImage(
+                                        image: AssetImage(item.imagePath),
+                                        fit: BoxFit.cover)),
+                              ),
+                              10.heightBox,
+                              Row(
+                                children: [
+                                  Text(
+                                    item.rating,
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 10),
+                                  )
+                                      .box
+                                      .roundedSM
+                                      .padding(EdgeInsets.all(2))
+                                      .border(color: Colors.white)
+                                      .make(),
+                                  10.widthBox,
+                                  Text(
+                                    item.rate,
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w500),
+                                  )
+                                ],
+                              ),
+                              3.heightBox,
+                              Text(
+                                item.name,
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 20),
+                              ),
+                              Text(
+                                item.Subtitle,
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 14),
+                              )
+                            ],
+                          ),
+                        );
+                      },
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: carouselItems.map((item) {
+                        int index = carouselItems.indexOf(item);
+                        return Container(
+                          width: 8.0,
+                          height: 8.0,
+                          margin: EdgeInsets.symmetric(
+                              vertical: 10.0, horizontal: 2.0),
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: _currentIndex == index
+                                ? Colors.white
+                                : Colors.grey,
+                          ),
+                        );
+                      }).toList(),
+                    ),
+                  ],
+                ),
               ),
-              _buildDotsIndicator(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Padding(padding: EdgeInsets.only(left: 25)),
+                  Text(
+                    "Trailers",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600),
+                  ),
+                ],
+              ),
+              10.heightBox,
               Container(
+                padding: EdgeInsets.only(left: 10),
                 height: main_Height * 0.30,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
@@ -144,13 +247,13 @@ class _MoviesScreenState extends State<MoviesScreen> {
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Container(
-                            width: main_Width * 0.40,
+                            width: main_Width * 0.45,
                             height: main_Height * 0.20,
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10.0),
+                              borderRadius: BorderRadius.circular(20),
                               image: DecorationImage(
                                 image: AssetImage(images[index]),
                                 fit: BoxFit.cover,
@@ -165,16 +268,15 @@ class _MoviesScreenState extends State<MoviesScreen> {
                                 fontWeight: FontWeight.bold,
                                 fontSize: 14),
                           ),
+                          5.heightBox,
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Text(
                                 rating[index],
                                 style: TextStyle(color: Colors.white),
-                              )
-                                  .box
-                                  .padding(
-                                  EdgeInsets.only(right: main_Width * 0.06))
-                                  .make(),
+                              ),
+                              10.widthBox,
                               Row(
                                 children: [
                                   Icon(
@@ -201,74 +303,7 @@ class _MoviesScreenState extends State<MoviesScreen> {
             ],
           ),
         ),
-      )
-    );
-  }
-  Widget _buildCarouselItem(Map<String, dynamic> item) {
-    double main_Width = MediaQuery.of(context).size.width;
-    double main_Height = MediaQuery.of(context).size.height;
-    return Container(
-      padding: EdgeInsets.all(10),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          // 10.heightBox,
-          Image.asset(
-            item['image'],
-            height: main_Height*0.42,// Adjust the width as needed, // Adjust the height as needed
-          ),
-          SizedBox(height: 10),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Text("IMBD",style: TextStyle(color: Colors.white,fontSize: main_Width*0.03),).box.padding(EdgeInsets.all(2)).roundedSM.border(color: Colors.white).make(),
-              10.widthBox,
-              Text("8.9",style: TextStyle(color: Colors.white,fontSize: main_Width*0.03),),
-            ],
-          ),
-          Row(
-            children: [
-              Column(
-                  children: [
-              Text(
-                item['name'],
-                style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white
-                ),
-              )
-              ]),
-            ],
-          ),
-          // 5.heightBox,
-          Row(
-            children: [
-              Column(
-                  children: [
-              Text(item['Subtitle'],style: TextStyle(color: Colors.white,fontSize: main_Width*0.03),)]),
-            ],
-          )
-        ],
       ),
-    );
-  }
-  Widget _buildDotsIndicator() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: data.map((item) {
-        int index = data.indexOf(item);
-        return Container(
-          width: 8.0,
-          height: 8.0,
-          margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: _currentIndex == index ? Colors.blueAccent : Colors.grey,
-          ),
-        );
-      }).toList(),
-    );
+    ));
   }
 }
-
