@@ -66,7 +66,7 @@ class _OrderConfirmationState extends State<OrderConfirmation> {
                     width: 80,
                   ),
                   Text(
-                    "Order Complete",
+                    "Order complete",
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                     style: TextStyle(
@@ -75,7 +75,7 @@ class _OrderConfirmationState extends State<OrderConfirmation> {
                         fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    "Your Order was Successfully Received at 23 Dec 2019, 09:00AM",
+                    "Your order was successfully received at 23 dec 2019, 09:00AM",
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                     style: TextStyle(
@@ -97,7 +97,7 @@ class _OrderConfirmationState extends State<OrderConfirmation> {
                           children: [
                             Padding(padding: EdgeInsets.only(left: 30)),
                             Text(
-                              "Movie Order Summary",
+                              "Movie order summary",
                               overflow: TextOverflow.ellipsis,
                               maxLines: 1,
                               style: TextStyle(
@@ -135,7 +135,7 @@ class _OrderConfirmationState extends State<OrderConfirmation> {
                                 ),
                                 15.heightBox,
                                 Text(
-                                  'Order Status',
+                                  'Order status',
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
@@ -145,7 +145,7 @@ class _OrderConfirmationState extends State<OrderConfirmation> {
                                 ),
                                 15.heightBox,
                                 Text(
-                                  'Order No',
+                                  'Order no',
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
@@ -155,7 +155,7 @@ class _OrderConfirmationState extends State<OrderConfirmation> {
                                 ),
                                 15.heightBox,
                                 Text(
-                                  'Booking ID',
+                                  'Booking id',
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
@@ -165,7 +165,7 @@ class _OrderConfirmationState extends State<OrderConfirmation> {
                                 ),
                                 15.heightBox,
                                 Text(
-                                  'Show Date',
+                                  'Show date',
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
@@ -175,7 +175,7 @@ class _OrderConfirmationState extends State<OrderConfirmation> {
                                 ),
                                 15.heightBox,
                                 Text(
-                                  'Show Time',
+                                  'Show time',
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
@@ -195,7 +195,7 @@ class _OrderConfirmationState extends State<OrderConfirmation> {
                                 ),
                                 15.heightBox,
                                 Text(
-                                  'Ticket Price',
+                                  'Ticket price',
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
@@ -305,7 +305,7 @@ class _OrderConfirmationState extends State<OrderConfirmation> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Pokemon Detective Pikachu',
+                                  'Pokemon detective pikachu',
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
@@ -315,7 +315,7 @@ class _OrderConfirmationState extends State<OrderConfirmation> {
                                 ),
                                 15.heightBox,
                                 Text(
-                                  'Palace Albany Theatre',
+                                  'Palace albany theatre',
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
@@ -355,7 +355,7 @@ class _OrderConfirmationState extends State<OrderConfirmation> {
                                 ),
                                 15.heightBox,
                                 Text(
-                                  'Friday, 20 Dec 2019',
+                                  'Friday, 20 dec 2019',
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
@@ -402,7 +402,7 @@ class _OrderConfirmationState extends State<OrderConfirmation> {
                           children: [
                             Padding(padding: EdgeInsets.only(left: 50)),
                             Text(
-                              "(Inclusive of Service Tex)",
+                              "(Inclusive of service tex)",
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
@@ -420,7 +420,7 @@ class _OrderConfirmationState extends State<OrderConfirmation> {
                             Row(
                               children: [
                                 Text(
-                                  "Payment Mode",
+                                  "Payment mode",
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
@@ -446,10 +446,10 @@ class _OrderConfirmationState extends State<OrderConfirmation> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                Text("NET BANKING",maxLines: 1,overflow: TextOverflow.ellipsis,
+                                Text("Net Banking",maxLines: 1,overflow: TextOverflow.ellipsis,
                                 style: TextStyle(color: Colors.white,fontSize: 12,fontWeight: FontWeight.w400),),
                                 20.widthBox,
-                                RichText(text: TextSpan(text: 'PAID: ',
+                                RichText(text: TextSpan(text: 'Paid: ',
                                 style: TextStyle(color: Colors.white,fontSize: 12,fontWeight: FontWeight.w400),
                                 children: [TextSpan(text: '  Rs.37.82',style: TextStyle(color: Color(0xFFed2b53),fontSize: 12,fontWeight: FontWeight.w400))]),)
                               ],
@@ -459,7 +459,7 @@ class _OrderConfirmationState extends State<OrderConfirmation> {
                         20.heightBox
                       ],
                     ),
-                  )
+                  ),
                 ],
               ),
             ))

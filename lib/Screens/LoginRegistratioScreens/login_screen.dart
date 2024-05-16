@@ -33,22 +33,22 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Column(
                   children: [
                     SizedBox(height: 40,),
-                    Image.asset("Assets/images/centre.png",width: main_Width*0.25,),
-                    Image.asset("Assets/images/Ocodile.png", width: main_Width*0.25,),
+                    Image.asset("Assets/images/centre.png",width: 100,fit: BoxFit.fitWidth,),
+                    Image.asset("Assets/images/Ocodile.png", width: 100,fit: BoxFit.fitWidth,),
                     5.heightBox,
-                    Image.asset("Assets/images/Movie Booking App.png",width: main_Width*0.35,),
+                    Image.asset("Assets/images/Movie Booking App.png",width: 130,fit: BoxFit.fitWidth,),
                   40.heightBox,
                   Align(
                     alignment: Alignment.bottomCenter,
                     child: Image.asset(
                       "Assets/images/Hello..!.png",
-                      // height: main_Height * 0.05,
-                      width: main_Width * 0.25,
+                      width: 110,fit: BoxFit.fitWidth
                     ),
                   ),
                   10.heightBox,
                   Text(
                     "Sign To Your Account",
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                         color: Color(0xFFffffff),
                         fontSize: 22,
@@ -80,7 +80,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           border: UnderlineInputBorder(
                               borderRadius: BorderRadius.circular(10)),
                           labelText:'Email ID*',labelStyle: TextStyle(color: Color(0xffb0b6ba),fontSize: 14),
-                          hintText: "Enter Your Email",hintStyle: TextStyle(color: Color(0xffb0b6ba),fontSize: 14)),
+                          hintText: "Enter Email",hintStyle: TextStyle(color: Color(0xffb0b6ba),fontSize: 14)),
                     ),
                   ),
                         Padding(
@@ -118,7 +118,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 border: UnderlineInputBorder(
                                     borderRadius: BorderRadius.circular(10)),
                                 labelText: 'Password* ',labelStyle: TextStyle(color: Color(0xffb0b6ba),fontSize: 14),
-                                hintText: "Enter New Password",hintStyle: TextStyle(color: Color(0xffb0b6ba),fontSize: 14),
+                                hintText: "Enter Password",hintStyle: TextStyle(color: Color(0xffb0b6ba),fontSize: 14),
                                 suffixIcon: choice == false
                                     ? IconButton(
                                     onPressed: () {
@@ -159,6 +159,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: Text(
                             "Forgot Password?",
                             style: TextStyle(
+                              fontSize: 14,
                                 color: Color(0xffea6752),
                                 fontWeight: FontWeight.bold),
                           )),
@@ -204,7 +205,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: Text(
                           "Or Login using Social Media",
                           style: TextStyle(
-                              color: Color(0xffffffff), fontWeight: FontWeight.bold),
+                              color: Color(0xffffffff),fontSize: 14, fontWeight: FontWeight.bold),
                         )),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -235,7 +236,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: [
                     Text(
                       "Don't have an Account?",
-                      style: TextStyle(color: Color(0xff8c919b)),
+                      style: TextStyle(overflow: TextOverflow.ellipsis,fontSize: 14,color: Color(0xff8c919b),fontWeight: FontWeight.w400),
                     ),
                     TextButton(
                         onPressed: () {
@@ -246,7 +247,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         },
                         child: Text(
                           "Register Now",
-                          style: TextStyle(color: Color(0xff8f3edf)),
+                          style: TextStyle(overflow: TextOverflow.ellipsis,fontSize: 14,fontWeight: FontWeight.w400,color: Color(0xff8f3edf)),
                         ))
                   ])
                 ]),

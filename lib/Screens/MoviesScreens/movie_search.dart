@@ -72,34 +72,25 @@ class _MovieSearchState extends State<MovieSearch> {
                     ],
                   ),
                   Container(
-                    width: main_Width * 0.12,
                     margin: EdgeInsets.only(right: 15, top: 5),
-                    // child: Icon(Icons.search,color: Colors.white,),
                     decoration: BoxDecoration(
+                      shape: BoxShape.circle,
                       gradient: LinearGradient(
                         begin: Alignment.topLeft,
                         end: Alignment(0.8, 1),
                         colors: [Color(0xFFFB6E37), Color(0xFF7D37FB)],
                         tileMode: TileMode.mirror,
                       ),
-                      borderRadius: BorderRadius.circular(25.0),
                     ),
-                    child: TextField(
-                      decoration: InputDecoration(
-                          border: InputBorder.none,
-                          prefixIcon: IconButton(
+                    child: IconButton(
                               onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => MovieSearch()));
+                                
                               },
                               icon: Icon(
                                 Icons.search,
                                 color: Colors.white,
                                 size: 28,
-                              ))),
-                    ),
+                              ))
                   ),
                 ],
               ),

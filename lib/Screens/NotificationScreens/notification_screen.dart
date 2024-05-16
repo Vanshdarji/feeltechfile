@@ -43,6 +43,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                                   ),
                                   Text(
                                     "Notification",
+                                    overflow: TextOverflow.ellipsis,
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.w500,
@@ -52,28 +53,17 @@ class _NotificationScreenState extends State<NotificationScreen> {
                                 ],
                               ),
                               Container(
-                                width: main_Width * 0.12,
                                 margin: EdgeInsets.only(right: 15, top: 5),
                                 decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
                                   gradient: LinearGradient(
                                     begin: Alignment.topLeft,
                                     end: Alignment(0.8, 1),
                                     colors: [Color(0xFFFB6E37), Color(0xFF7D37FB)],
                                     tileMode: TileMode.mirror,
                                   ),
-                                  borderRadius: BorderRadius.circular(25.0),
                                 ),
-                                child: TextField(
-                                  decoration: InputDecoration(
-                                      border: InputBorder.none,
-                                      prefixIcon: IconButton(
-                                          onPressed: () {},
-                                          icon: Icon(
-                                            Icons.search,
-                                            color: Colors.white,
-                                            size: 28,
-                                          ))),
-                                ),
+                                child: IconButton(onPressed: (){}, icon: Icon(Icons.search,size: 28,color: Colors.white,))
                               ),
                             ],
                           ),
@@ -96,8 +86,9 @@ class _NotificationScreenState extends State<NotificationScreen> {
                           Padding(padding: EdgeInsets.only(left: 25)),
                           Text(
                             "Today Release Movies",
+                            overflow: TextOverflow.ellipsis,
                             style:
-                                TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                                TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),
@@ -107,8 +98,8 @@ class _NotificationScreenState extends State<NotificationScreen> {
                         child: Row(
                           children: [
                             Container(
-                              height: main_Height * 0.20,
-                              width: main_Width * 0.35,
+                              height: 180,
+                              width: 140,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
                                   image: DecorationImage(
@@ -124,8 +115,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                                     child: Row(
                                       children: [
                                         Container(
-                                          padding: EdgeInsets.only(
-                                                top: 1, right: 10, left: 10, bottom: 6),
+                                          padding: EdgeInsets.all(4),
                                             decoration: BoxDecoration(
                                               borderRadius:
                                                   BorderRadius.all(Radius.circular(8)),
@@ -191,7 +181,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 30),
                         child: Divider(
-                          height: main_Height * 0.03,
+                          height: 25,
                           color: Color.fromARGB(255, 79, 79, 79),
                         ),
                       ),
@@ -200,8 +190,8 @@ class _NotificationScreenState extends State<NotificationScreen> {
                         child: Row(
                           children: [
                             Container(
-                              height: main_Height * 0.20,
-                              width: main_Width * 0.35,
+                              height: 180,
+                              width: 140,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
                                   image: DecorationImage(
@@ -217,8 +207,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                                     child: Row(
                                       children: [
                                         Container(
-                                          padding: EdgeInsets.only(
-                                              top: 1, right: 10, left: 10, bottom: 6),
+                                          padding: EdgeInsets.all(4),
                                           decoration: BoxDecoration(
                                             borderRadius:
                                                 BorderRadius.all(Radius.circular(8)),
@@ -230,6 +219,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                                             overflow: TextOverflow.ellipsis,
                                             style: TextStyle(
                                                 color: Colors.white,
+                                                fontSize: 13,
                                                 fontWeight: FontWeight.w500),
                                           ),
                                         ),
@@ -300,8 +290,8 @@ class _NotificationScreenState extends State<NotificationScreen> {
                         Row(
                           children: [
                             Container(
-                              height: main_Height * 0.20,
-                              width: main_Width * 0.35,
+                              height: 180,
+                              width: 140,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
                                   image: DecorationImage(
@@ -317,8 +307,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                                     child: Row(
                                       children: [
                                         Container(
-                                          padding: EdgeInsets.only(
-                                            top: 1, right: 10, left: 10, bottom: 6),
+                                          padding: EdgeInsets.all(4),
                                         decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.all(Radius.circular(8)),
@@ -383,15 +372,15 @@ class _NotificationScreenState extends State<NotificationScreen> {
                         Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: Divider(
-                        height: main_Height * 0.03,
+                        height: 25,
                         color: Color.fromARGB(255, 79, 79, 79),
                       ),
                     ),
                         Row(
                           children: [
                             Container(
-                              height: main_Height * 0.20,
-                              width: main_Width * 0.35,
+                              height: 180,
+                              width: 140,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
                                   image: DecorationImage(
@@ -407,8 +396,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                                     child: Row(
                                       children: [
                                         Container(
-                                          padding: EdgeInsets.only(
-                                            top: 1, right: 10, left: 10, bottom: 6),
+                                          padding: EdgeInsets.all(4),
                                         decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.all(Radius.circular(8)),

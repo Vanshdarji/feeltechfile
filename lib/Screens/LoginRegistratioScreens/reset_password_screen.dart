@@ -46,16 +46,16 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                         child: Center(
               child: Column(children: [
                 SizedBox(height: 40,),
-                Image.asset("Assets/images/centre.png",width: main_Width*0.25,),
-                Image.asset("Assets/images/Ocodile.png", width: main_Width*0.25,),
+                Image.asset("Assets/images/centre.png",width: 100,fit: BoxFit.fitWidth,),
+                Image.asset("Assets/images/Ocodile.png", width: 100,fit: BoxFit.fitWidth),
                 5.heightBox,
-                Image.asset("Assets/images/Movie Booking App.png",width: main_Width*0.35,),
+                Image.asset("Assets/images/Movie Booking App.png",width: 130,fit: BoxFit.fitWidth),
             60.heightBox,
             Align(
               alignment: Alignment.bottomCenter,
               child: Image.asset(
                 "Assets/images/Welcome..!.png",
-                width: main_Width * 0.35,
+                width: 130,fit: BoxFit.fitWidth
               ),
             ),
             10.heightBox,
@@ -90,7 +90,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                       border: UnderlineInputBorder(
                           borderRadius: BorderRadius.circular(10)),
                       labelText:'Email ID*',labelStyle: TextStyle(color: Color(0xffb0b6ba),fontSize: 14),
-                      hintText: "Enter Your Email",hintStyle: TextStyle(color: Color(0xffb0b6ba),fontSize: 14)),
+                      hintText: "Enter Email",hintStyle: TextStyle(color: Color(0xffb0b6ba),fontSize: 14)),
                 ),
               ),
               20.heightBox,
@@ -134,7 +134,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                   child: Text(
                     "Or Login using Social Media",
                     style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.bold),
+                        color: Colors.white,fontSize: 14, fontWeight: FontWeight.bold),
                   )),
               5.heightBox,
               Row(
@@ -164,7 +164,8 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               Text(
                 "Don't have an Account?",
-                style: TextStyle(color: Color(0xff8c919b)),
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(color: Color(0xff8c919b),fontSize: 14,fontWeight: FontWeight.w400),
               ),
               TextButton(
                   onPressed: () {
@@ -175,7 +176,8 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                   },
                   child: Text(
                     "Login",
-                    style: TextStyle(color: Color(0xff8f3edf)),
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(color: Color(0xff8f3edf),fontSize: 14,fontWeight: FontWeight.w400),
                   ))
             ])
                         ])),

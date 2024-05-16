@@ -111,7 +111,7 @@ class _MainScreenState extends State<MainScreen> {
                           CircleAvatar(
                             radius: 48, // Image radius
                             backgroundImage: AssetImage(
-                                "Assets/images/3d-illustration-human-avatar-profile_23-2150671116.jpg"),
+                                "Assets/images/3d-illustration-human-avatar-profile_23-2150671116.jpg",),
                           ),
                           10.widthBox,
                           Column(
@@ -120,7 +120,7 @@ class _MainScreenState extends State<MainScreen> {
                               Text(
                                 "Theodore Handle",
                                 style: TextStyle(color: Colors.white, fontSize: 15),
-                              ).box.padding(EdgeInsets.only(right: 10)).make(),
+                              ),
                               Row(
                                 children: [
                                   Icon(
@@ -130,6 +130,7 @@ class _MainScreenState extends State<MainScreen> {
                                   ),
                                   Text(
                                     "Washington Jackson,Pennsylvania",
+                                  overflow: TextOverflow.ellipsis,
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 10,
@@ -148,6 +149,7 @@ class _MainScreenState extends State<MainScreen> {
                                   5.widthBox,
                                   Text(
                                     "theodore@gmail.com",
+                                    overflow: TextOverflow.ellipsis,
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontWeight: FontWeight.bold,
@@ -248,7 +250,7 @@ class _MainScreenState extends State<MainScreen> {
                                           children: [
                                             Container(
                                               width: main_Width * 0.12,
-                                              height: main_Height * 0.03,
+                                              height: 25,
                                               alignment: Alignment
                                                   .center, // Alignment as center
                                               decoration: BoxDecoration(
@@ -267,7 +269,7 @@ class _MainScreenState extends State<MainScreen> {
                                             ),
                                             Container(
                                               margin: EdgeInsets.all(4),
-                                              height: main_Height * 0.03,
+                                              height: 25,
                                               width: main_Width * 0.05,
                                               decoration: const BoxDecoration(
                                                   shape: BoxShape.circle,
@@ -310,7 +312,7 @@ class _MainScreenState extends State<MainScreen> {
                                         children: [
                                           Container(
                                             width: main_Width * 0.12,
-                                            height: main_Height * 0.03,
+                                            height: 25,
                                             alignment: Alignment
                                                 .center, // Alignment as center
                                             decoration: BoxDecoration(
@@ -329,7 +331,7 @@ class _MainScreenState extends State<MainScreen> {
                                           ),
                                           Container(
                                             margin: EdgeInsets.all(4),
-                                            height: main_Height * 0.03,
+                                            height: 25,
                                             width: main_Width * 0.05,
                                             decoration: const BoxDecoration(
                                                 shape: BoxShape.circle,

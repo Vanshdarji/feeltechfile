@@ -65,3 +65,13 @@ final List<CarouselItem> carouselItems = [
       Subtitle: "Adventure, Family, Comady",
       imagePath: Birds),
 ];
+
+//Profile Screen
+class UserProfile {
+  String name;
+  String email;
+  String bio;
+  String Country;
+
+  UserProfile({required this.name, required this.email, required this.bio,required this.Country});
+}

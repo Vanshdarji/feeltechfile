@@ -44,142 +44,154 @@ class _TheaterState extends State<Theater> {
     double main_Height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
-          backgroundColor: Color(0xff1f203c),
-          body:  Column(
-              children: [
-                Container(
-                  color:Color(0xff2e3350) ,
-                  child: Padding(
-                        padding: const EdgeInsets.all(2.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                IconButton(
-                                  icon: Icon(
-                                    Icons.arrow_back_ios,
-                                    color: Colors.white,
-                                    size: 18,
-                                  ),
-                                  onPressed: () {
-                                    Navigator.of(context).pop();
-                                  },
-                                ),
-                                Text(
-                                  "Theaters",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 20,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Container(
-                              width: main_Width * 0.12,
-                              margin: EdgeInsets.only(right: 15, top: 5),
-                              decoration: BoxDecoration(
-                                gradient: LinearGradient(
-                                  begin: Alignment.topLeft,
-                                  end: Alignment(0.8, 1),
-                                  colors: [
-                                    Color(0xFFFB6E37),
-                                    Color(0xFF7D37FB)
-                                  ],
-                                  tileMode: TileMode.mirror,
-                                ),
-                                borderRadius: BorderRadius.circular(25.0),
-                              ),
-                              child: TextField(
-                                decoration: InputDecoration(
-                                    border: InputBorder.none,
-                                    prefixIcon: IconButton(
-                                        onPressed: () {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      TheaterSearch()));
-                                        },
-                                        icon: Icon(
-                                          Icons.search,
-                                          color: Colors.white,
-                                          size: 28,
-                                        ))),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                ),
-                Expanded(
-                  child: SingleChildScrollView(
-                    child: Column(
+        backgroundColor: Color(0xff1f203c),
+        body: Column(
+          children: [
+            Container(
+              color: Color(0xff2e3350),
+              child: Padding(
+                padding: const EdgeInsets.all(2.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
                       children: [
-                        Container(
-                          decoration: BoxDecoration(
-                              color: Color(0xff2e3350),
-                              borderRadius:
-                                  BorderRadius.vertical(bottom: Radius.circular(20))),
-                          child: Column(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.symmetric(horizontal: 20),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "Near By",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 16),
-                                    ),
-                                    TextButton(
-                                        onPressed: () {},
-                                        child: Text(
-                                          "VIEW ALL",
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.w500,
-                                              color: Colors.white, fontSize: 10),
-                                        ))
-                                  ],
-                                ),
-                              ),
-                              Column(children: [
-                                CarouselSlider.builder(
-                                  itemCount: carouselItems.length,
-                                  options: CarouselOptions(
-                                    height: 380,
-                                    padEnds: false,
-                                    enlargeCenterPage: true,
-                                    disableCenter: true,
-                                    enlargeFactor: 0.35,
-                                    aspectRatio: 2.0,
-                                    viewportFraction: 0.7,
-                                    scrollDirection: Axis.horizontal,
-                                    onPageChanged: (index, _) {
-                                      setState(() {
-                                        _currentIndex = index;
-                                      });
-                                    },
+                        IconButton(
+                          icon: Icon(
+                            Icons.arrow_back_ios,
+                            color: Colors.white,
+                            size: 18,
+                          ),
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                        ),
+                        Text(
+                          "Theaters",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 20,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Container(
+                        margin: EdgeInsets.only(right: 15, top: 5),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          gradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment(0.8, 1),
+                            colors: [Color(0xFFFB6E37), Color(0xFF7D37FB)],
+                            tileMode: TileMode.mirror,
+                          ),
+                        ),
+                        child: IconButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => TheaterSearch()));
+                            },
+                            icon: Icon(
+                              Icons.search,
+                              size: 28,
+                              color: Colors.white,
+                            ))),
+                  ],
+                ),
+              ),
+            ),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                          color: Color(0xff1f203c),
+                          borderRadius: BorderRadius.vertical(
+                              bottom: Radius.circular(20))),
+                      child: Column(
+                        children: [
+                          Container(
+                            color: Color(0xFF2e3350),
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 20),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "Near By",
+                                    overflow: TextOverflow.ellipsis,
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16),
                                   ),
-                                  itemBuilder: (context, index, realIndex) {
-                                    // final item = carouselItems[index];
-                                    return Padding(
-                                      padding: const EdgeInsets.only(left: 35),
-                                      child: Expanded(
+                                  TextButton(
+                                      onPressed: () {},
+                                      child: Text(
+                                        "VIEW ALL",
+                                        overflow: TextOverflow.ellipsis,
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w400,
+                                            color: Colors.white,
+                                            fontSize: 12),
+                                      ))
+                                ],
+                              ),
+                            ),
+                          ),
+                          Container(
+                            child: Stack(
+                              children: [
+                                Positioned(
+                                    child: Container(
+                                  height: 200,
+                                  decoration: BoxDecoration(
+                                      color: Color(0xFF2e3350),
+                                      borderRadius: BorderRadius.vertical(
+                                          bottom: Radius.circular(20))),
+                                )),
+                                Positioned(
+                                  child: CarouselSlider.builder(
+                                    itemCount: carouselItems.length,
+                                    options: CarouselOptions(
+                                      height: 380,
+                                      padEnds: false,
+                                      enlargeCenterPage: true,
+                                      disableCenter: true,
+                                      enlargeFactor: 0.35,
+                                      aspectRatio: 2.0,
+                                      viewportFraction: 0.7,
+                                      scrollDirection: Axis.horizontal,
+                                      onPageChanged: (index, _) {
+                                        setState(() {
+                                          _currentIndex = index;
+                                        });
+                                      },
+                                    ),
+                                    itemBuilder: (context, index, realIndex) {
+                                      // final item = carouselItems[index];
+                                      return Padding(
+                                        padding:
+                                            const EdgeInsets.only(left: 35),
                                         child: Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Container(
                                               height: 300,
                                               decoration: BoxDecoration(
                                                 borderRadius:
-                                                    BorderRadius.circular(10.0),
+                                                    BorderRadius.circular(
+                                                        10.0),
                                                 image: DecorationImage(
-                                                  image: AssetImage(images[index]),
+                                                  image: AssetImage(
+                                                      images[index]),
                                                   fit: BoxFit.cover,
                                                 ),
                                               ),
@@ -196,15 +208,18 @@ class _TheaterState extends State<Theater> {
                                             ),
                                             Row(
                                               mainAxisAlignment:
-                                                  MainAxisAlignment.spaceBetween,
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
                                               children: [
                                                 Text(
                                                   sub[index],
                                                   maxLines: 1,
-                                                  overflow: TextOverflow.ellipsis,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
                                                   style: TextStyle(
                                                       color: Colors.white,
-                                                      fontWeight: FontWeight.w500,
+                                                      fontWeight:
+                                                          FontWeight.w500,
                                                       fontSize: 12),
                                                 ),
                                                 Container(
@@ -214,10 +229,12 @@ class _TheaterState extends State<Theater> {
                                                       left: 5,
                                                       bottom: 2),
                                                   decoration: BoxDecoration(
-                                                    borderRadius: BorderRadius.all(
-                                                        Radius.circular(8)),
-                                                    border:
-                                                        Border.all(color: Colors.white),
+                                                    borderRadius:
+                                                        BorderRadius.all(
+                                                            Radius.circular(
+                                                                8)),
+                                                    border: Border.all(
+                                                        color: Colors.white),
                                                   ),
                                                   child: Row(
                                                     children: [
@@ -229,11 +246,14 @@ class _TheaterState extends State<Theater> {
                                                       Text(
                                                         "4.3",
                                                         maxLines: 1,
-                                                        overflow: TextOverflow.ellipsis,
+                                                        overflow: TextOverflow
+                                                            .ellipsis,
                                                         style: TextStyle(
-                                                            color: Colors.white,
+                                                            color:
+                                                                Colors.white,
                                                             fontWeight:
-                                                                FontWeight.w500),
+                                                                FontWeight
+                                                                    .w500),
                                                       ),
                                                     ],
                                                   ),
@@ -242,229 +262,243 @@ class _TheaterState extends State<Theater> {
                                             ),
                                           ],
                                         ),
-                                      ),
-                                    );
-                                  },
+                                      );
+                                    },
+                                  ),
                                 ),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: carouselItems.map((item) {
-                                    int index = carouselItems.indexOf(item);
-                                    return Container(
-                                      width: 8.0,
-                                      height: 8.0,
-                                      margin: EdgeInsets.symmetric(
-                                          vertical: 10.0, horizontal: 2.0),
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: _currentIndex == index
-                                            ? Colors.orange
-                                            : Colors.grey,
-                                      ),
-                                    );
-                                  }).toList(),
-                                ),
-                              ]),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                        20.heightBox,
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "A/C Theaters",
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: carouselItems.map((item) {
+                              int index = carouselItems.indexOf(item);
+                              return Container(
+                                width: 8.0,
+                                height: 8.0,
+                                margin: EdgeInsets.symmetric(
+                                    vertical: 10.0, horizontal: 2.0),
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: _currentIndex == index
+                                      ? Colors.orange
+                                      : Colors.grey,
+                                ),
+                              );
+                            }).toList(),
+                          ),
+                        ],
+                      ),
+                    ),
+                    20.heightBox,
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "A/C Theaters",
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16),
+                          ),
+                          TextButton(
+                              onPressed: () {},
+                              child: Text(
+                                "VIEW ALL",
+                                overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                     color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 16),
-                              ),
-                              TextButton(
-                                  onPressed: () {},
-                                  child: Text(
-                                    "VIEW ALL",
-                                    style: TextStyle(color: Colors.white, fontSize: 10,fontWeight: FontWeight.w400),
-                                  ))
-                            ],
-                          ),
-                        ),
-                        Container(
-                          padding: EdgeInsets.only(left: 10),
-                          height: main_Height * 0.35,
-                          child: ListView.builder(
-                            scrollDirection: Axis.horizontal,
-                            itemCount: images2.length,
-                            itemBuilder: (BuildContext context, int index) {
-                              return Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Expanded(
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    children: <Widget>[
-                                      Container(
-                                        width: main_Width * 0.45,
-                                        height: main_Height * 0.25,
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(25),
-                                          image: DecorationImage(
-                                            image: AssetImage(images2[index]),
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w400),
+                              ))
+                        ],
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(left: 10),
+                      height: 280,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: images2.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: <Widget>[
+                                  Container(
+                                    width: main_Width * 0.45,
+                                    height: 210,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(25),
+                                      image: DecorationImage(
+                                        image: AssetImage(images2[index]),
+                                        fit: BoxFit.cover,
                                       ),
-                                      SizedBox(height: 8.0),
+                                    ),
+                                  ),
+                                  SizedBox(height: 8.0),
+                                  Text(
+                                    "${names[index]}",
+                                    overflow: TextOverflow.ellipsis,
+                                    maxLines: 1,
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 14),
+                                  ),
+                                  5.heightBox,
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
                                       Text(
-                                        "${names[index]}",
-                                        overflow: TextOverflow.ellipsis,
+                                        "${rating[index]}",
                                         maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
                                         style: TextStyle(
                                             color: Colors.white,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 14),
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.w400),
                                       ),
-                                      5.heightBox,
+                                      10.widthBox,
                                       Row(
-                                        mainAxisAlignment: MainAxisAlignment.start,
                                         children: [
-                                          Text(
-                                            "${rating[index]}",
-                                            maxLines: 1,
-                                            overflow: TextOverflow.ellipsis,
-                                            style: TextStyle(color: Colors.white,fontSize: 13,fontWeight: FontWeight.w400),
-                                          ),
-                                          10.widthBox,
-                                          Row(
-                                            children: [
-                                              Text(
-                                                "4.3",
-                                                maxLines: 1,
-                                                overflow: TextOverflow.ellipsis,
-                                                style: TextStyle(
-                                                    color: Colors.white,
-                                                    fontWeight: FontWeight.w400,)
-                                              ),
-                                              Icon(
-                                                Icons.star,
+                                          Text("4.3",
+                                              maxLines: 1,
+                                              overflow: TextOverflow.ellipsis,
+                                              style: TextStyle(
                                                 color: Colors.white,
-                                                size: 10,
-                                              ),
-                                            ],
-                                          )
+                                                fontWeight: FontWeight.w400,
+                                              )),
+                                          Icon(
+                                            Icons.star,
+                                            color: Colors.white,
+                                            size: 10,
+                                          ),
                                         ],
                                       )
                                     ],
-                                  ),
-                                ),
-                              );
-                            },
+                                  )
+                                ],
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Non A/c Theater",
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "Non A/c Theater",
+                          TextButton(
+                              onPressed: () {},
+                              child: Text(
+                                "VIEW ALL",
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                     color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 16),
-                              ),
-                              TextButton(
-                                  onPressed: () {},
-                                  child: Text(
-                                    "VIEW ALL",
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w400),
+                              ))
+                        ],
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(left: 10),
+                      height: 280,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: images3.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: <Widget>[
+                                  Container(
+                                    width: main_Width * 0.45,
+                                    height: 210,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(25),
+                                      image: DecorationImage(
+                                        image: AssetImage(images3[index]),
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(height: 8.0),
+                                  Text(
+                                    "${names[index]}",
                                     maxLines: 1,
                                     overflow: TextOverflow.ellipsis,
-                                    style: TextStyle(color: Colors.white, fontSize: 10,fontWeight: FontWeight.w400),
-                                  ))
-                            ],
-                          ),
-                        ),
-                        Container(
-                          padding: EdgeInsets.only(left: 10),
-                          height: main_Height * 0.35,
-                          child: ListView.builder(
-                            scrollDirection: Axis.horizontal,
-                            itemCount: images3.length,
-                            itemBuilder: (BuildContext context, int index) {
-                              return Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Expanded(
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    children: <Widget>[
-                                      Container(
-                                        width: main_Width * 0.45,
-                                        height: main_Height * 0.25,
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(25),
-                                          image: DecorationImage(
-                                            image: AssetImage(images3[index]),
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(height: 8.0),
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 14),
+                                  ),
+                                  5.heightBox,
+                                  Row(
+                                    children: [
                                       Text(
-                                        "${names[index]}",
+                                        "${rating[index]}",
                                         maxLines: 1,
                                         overflow: TextOverflow.ellipsis,
                                         style: TextStyle(
                                             color: Colors.white,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 14),
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.w400),
                                       ),
-                                      5.heightBox,
+                                      10.widthBox,
                                       Row(
                                         children: [
                                           Text(
-                                            "${rating[index]}",
+                                            "4.3",
                                             maxLines: 1,
                                             overflow: TextOverflow.ellipsis,
-                                            style: TextStyle(color: Colors.white,fontSize: 13,fontWeight: FontWeight.w400),
-                                          ),
-                                          10.widthBox,
-                                          Row(
-                                            children: [
-                  
-                                              Text(
-                                                "4.3",
-                                                maxLines: 1,
-                                                overflow: TextOverflow.ellipsis,
-                                                style: TextStyle(
-                                                    color: Colors.white,
-                                                    fontSize: 13,
-                                                    fontWeight: FontWeight.w400),
-                                              ),
-                                              Icon(
-                                                Icons.star,
+                                            style: TextStyle(
                                                 color: Colors.white,
-                                                size: 10,
-                                              ),
-                                            ],
+                                                fontSize: 13,
+                                                fontWeight: FontWeight.w400),
+                                          ),
+                                          Icon(
+                                            Icons.star,
+                                            color: Colors.white,
+                                            size: 10,
                                           ),
                                         ],
-                                      )
+                                      ),
                                     ],
-                                  ),
-                                ),
-                              );
-                            },
-                          ),
-                        ),
-                      ],
+                                  )
+                                ],
+                              ),
+                            ),
+                          );
+                        },
+                      ),
                     ),
-                  ),
+                  ],
                 ),
-              ],
+              ),
             ),
-          ),
+          ],
+        ),
+      ),
     );
   }
 }

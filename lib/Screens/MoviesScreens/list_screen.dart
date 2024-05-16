@@ -42,6 +42,7 @@ class _MoviesListState extends State<MoviesList> {
                         ),
                         Text(
                           "Movies",
+                          overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w500,
@@ -51,29 +52,22 @@ class _MoviesListState extends State<MoviesList> {
                       ],
                     ),
                     Container(
-                      width: main_Width * 0.12,
+                      padding:EdgeInsets.all(10),
                       margin: EdgeInsets.only(right: 15, top: 5),
                       decoration: BoxDecoration(
+                        shape: BoxShape.circle,
                         gradient: LinearGradient(
                           begin: Alignment.topLeft,
                           end: Alignment(0.8, 1),
                           colors: [Color(0xFFFB6E37), Color(0xFF7D37FB)],
                           tileMode: TileMode.mirror,
                         ),
-                        borderRadius: BorderRadius.circular(25.0),
                       ),
-                      child: TextField(
-                        decoration: InputDecoration(
-                            border: InputBorder.none,
-                            prefixIcon: IconButton(
-                                onPressed: () {},
-                                icon: Icon(
+                      child: Icon(
                                   Icons.search,
                                   color: Colors.white,
-                                  size: 28,
-                                ))),
-                      ),
-                    ),
+                                  size: 28
+                    ),)
                   ],
                 ),
               ),
@@ -82,63 +76,63 @@ class _MoviesListState extends State<MoviesList> {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    Row(
-                      children: [
-                        Padding(padding: EdgeInsets.only(left: 40, top: 20)),
-                        Text(
-                          "Trending",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
-                        ),
-                        20.widthBox,
-                        InkWell(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => MoviePopular()));
-                          },
-                          child: Text(
-                            "Popular",
-                            style: TextStyle(color: Colors.white, fontSize: 15),
-                          ),
-                        ),
-                      ],
-                    ),
+                    // Row(
+                    //   children: [
+                    //     Padding(padding: EdgeInsets.only(left: 40, top: 20)),
+                    //     Text(
+                    //       "Trending",
+                    //       overflow: TextOverflow.ellipsis,
+                    //       style: TextStyle(
+                    //           color: Colors.white,
+                    //           fontWeight: FontWeight.bold,
+                    //           fontSize: 20),
+                    //     ),
+                    //     20.widthBox,
+                    //     InkWell(
+                    //       onTap: () {
+                    //         Navigator.push(
+                    //             context,
+                    //             MaterialPageRoute(
+                    //                 builder: (context) => MoviePopular()));
+                    //       },
+                    //       child: Text(
+                    //         "Popular",
+                    //         overflow: TextOverflow.ellipsis,
+                    //         style: TextStyle(color: Colors.white, fontSize: 14,fontWeight: FontWeight.w400),
+                    //       ),
+                    //     ),
+                    //   ],
+                    // ),
                     20.heightBox,
-                    Column(
-                      children: [
-                        LottieBuilder.network(
-                          "https://lottie.host/68e357e5-632a-414c-9289-b916c93a66d2/9JrisN12kt.json",
-                          height: main_Height * 0.25,
-                          width: main_Width * 0.80,
-                        )
-                      ],
-                    ).box.border(color: Colors.grey).rounded.make(),
+                    Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.grey),
+                        borderRadius: BorderRadius.circular(20)
+                      ),
+                      child: LottieBuilder.network(
+                        "https://lottie.host/68e357e5-632a-414c-9289-b916c93a66d2/9JrisN12kt.json",
+                        height: 210,
+                        width: 320,
+                      ),
+                    ),
                     Padding(
                       padding: const EdgeInsets.only(left: 40, top: 10),
                       child: Row(
                         children: [
-                          Expanded(
-                            flex: -1,
-                            child: Container(
-                              padding: EdgeInsets.only(
-                                  top: 1, right: 10, left: 10, bottom: 6),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.all(Radius.circular(8)),
-                                border: Border.all(color: Colors.white),
-                              ),
-                              child: Text(
-                                "IMBD",
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.bold),
-                              ),
+                          Container(
+                            padding: EdgeInsets.all(4),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(Radius.circular(8)),
+                              border: Border.all(color: Colors.white),
+                            ),
+                            child: Text(
+                              "IMBD",
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.bold),
                             ),
                           ),
                           10.widthBox,
@@ -174,6 +168,8 @@ class _MoviesListState extends State<MoviesList> {
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
                                 color: Colors.white,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400
                               ),
                             ),
                           )
@@ -186,8 +182,8 @@ class _MoviesListState extends State<MoviesList> {
                       child: Row(
                         children: [
                           Container(
-                            height: main_Height * 0.20,
-                            width: main_Width * 0.35,
+                            height: 180,
+                            width: 140,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
                                 image: DecorationImage(
@@ -203,8 +199,7 @@ class _MoviesListState extends State<MoviesList> {
                                   child: Row(
                                     children: [
                                       Container(
-                                        padding: EdgeInsets.only(
-                                            top: 1, right: 10, left: 10, bottom: 6),
+                                        padding: EdgeInsets.all(4),
                                         decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.all(Radius.circular(8)),
@@ -212,6 +207,7 @@ class _MoviesListState extends State<MoviesList> {
                                         ),
                                         child: Text(
                                           "IMBD",
+                                          overflow: TextOverflow.ellipsis,
                                           style: TextStyle(
                                               fontSize: 12,
                                               color: Colors.white,
@@ -221,6 +217,7 @@ class _MoviesListState extends State<MoviesList> {
                                       10.widthBox,
                                       Text(
                                         "8.9",
+                                        overflow: TextOverflow.ellipsis,
                                         style: TextStyle(color: Colors.white,fontSize: 13,fontWeight: FontWeight.w400),
                                       )
                                     ],
@@ -267,7 +264,7 @@ class _MoviesListState extends State<MoviesList> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 30),
                       child: Divider(
-                        height: main_Height * 0.03,
+                        height: 25,
                         color: Color.fromARGB(255, 79, 79, 79),
                       ),
                     ),
@@ -276,8 +273,8 @@ class _MoviesListState extends State<MoviesList> {
                       child: Row(
                         children: [
                           Container(
-                            height: main_Height * 0.20,
-                            width: main_Width * 0.35,
+                            height: 180,
+                            width: 140,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
                                 image: DecorationImage(
@@ -294,8 +291,7 @@ class _MoviesListState extends State<MoviesList> {
                                     
                                     children: [
                                       Container(
-                                        padding: EdgeInsets.only(
-                                            top: 1, right: 10, left: 10, bottom: 6),
+                                        padding: EdgeInsets.all(4),
                                         decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.all(Radius.circular(8)),
@@ -303,6 +299,7 @@ class _MoviesListState extends State<MoviesList> {
                                         ),
                                         child: Text(
                                           "IMBD",
+                                          overflow: TextOverflow.ellipsis,
                                           style: TextStyle(
                                             fontSize: 12,
                                               color: Colors.white,
@@ -312,6 +309,7 @@ class _MoviesListState extends State<MoviesList> {
                                       10.widthBox,
                                       Text(
                                         "7.8",
+                                        overflow: TextOverflow.ellipsis,
                                         style: TextStyle(color: Colors.white,fontSize: 13,fontWeight: FontWeight.w400),
                                       )
                                     ],
@@ -357,7 +355,7 @@ class _MoviesListState extends State<MoviesList> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 30),
                       child: Divider(
-                        height: main_Height * 0.03,
+                        height: 25,
                         color: Color.fromARGB(255, 79, 79, 79),
                       ),
                     ),
@@ -366,8 +364,8 @@ class _MoviesListState extends State<MoviesList> {
                       child: Row(
                         children: [
                           Container(
-                            height: main_Height * 0.20,
-                            width: main_Width * 0.35,
+                            height: 180,
+                            width:140,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
                                 image: DecorationImage(
@@ -383,8 +381,7 @@ class _MoviesListState extends State<MoviesList> {
                                   child: Row(
                                     children: [
                                       Container(
-                                        padding: EdgeInsets.only(
-                                            top: 1, right: 10, left: 10, bottom: 6),
+                                        padding: EdgeInsets.all(4),
                                         decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.all(Radius.circular(8)),
@@ -392,6 +389,7 @@ class _MoviesListState extends State<MoviesList> {
                                         ),
                                         child: Text(
                                           "IMBD",
+                                          overflow: TextOverflow.ellipsis,
                                           style: TextStyle(
                                             fontSize: 12,
                                               color: Colors.white,
@@ -448,7 +446,7 @@ class _MoviesListState extends State<MoviesList> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 30),
                       child: Divider(
-                        height: main_Height * 0.03,
+                        height: 25,
                         color: Color.fromARGB(255, 79, 79, 79),
                       ),
                     ),
@@ -462,5 +460,3 @@ class _MoviesListState extends State<MoviesList> {
     );
   }
 }
-
-// https://lottie.host/68e357e5-632a-414c-9289-b916c93a66d2/9JrisN12kt.json

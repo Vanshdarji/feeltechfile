@@ -3,6 +3,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:vanshtask1/Screens/TheatersScreens/write_review_screen.dart';
 import 'package:vanshtask1/Screens/TicketScreen/payment_screen.dart';
 import 'package:vanshtask1/Screens/TicketScreen/ticket_booking.dart';
+import 'package:vanshtask1/Screens/TicketScreen/ticket_booking_non.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class ReviewScreen extends StatefulWidget {
@@ -75,6 +76,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
                               children: [
                                 Text(
                                   "All Reviews",
+                                  overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 16,
@@ -92,6 +94,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
                                     children: [
                                       Text(
                                         "Write a Review",
+                                        overflow: TextOverflow.ellipsis,
                                         style: TextStyle(
                                             color: Colors.white,
                                             fontSize: 14,
@@ -120,6 +123,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
                                     children: [
                                       Text(
                                         "4.5",
+                                        overflow: TextOverflow.ellipsis,
                                         style: TextStyle(
                                             color: Colors.white,
                                             fontSize: 40,
@@ -127,6 +131,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
                                       ),
                                       Text(
                                         "Out of 05",
+                                        overflow: TextOverflow.ellipsis,
                                         style: TextStyle(
                                             color: Colors.white,
                                             fontSize: 12,
@@ -162,7 +167,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
                                           ),
                                           15.heightBox,
                                           Container(
-                                              height: main_Height * 0.012,
+                                              height: 10,
                                               width: main_Width * 0.4,
                                               decoration: BoxDecoration(
                                                 color: Color(0xFF525770),
@@ -220,7 +225,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
                                           ),
                                           15.heightBox,
                                           Container(
-                                              height: main_Height * 0.012,
+                                              height:10,
                                               width: main_Width * 0.4,
                                               decoration: BoxDecoration(
                                                 color: Color(0xFF525770),
@@ -278,7 +283,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
                                           ),
                                           15.heightBox,
                                           Container(
-                                              height: main_Height * 0.012,
+                                              height: 10,
                                               width: main_Width * 0.4,
                                               decoration: BoxDecoration(
                                                 color: Color(0xFF525770),
@@ -336,7 +341,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
                                           ),
                                           15.heightBox,
                                           Container(
-                                              height: main_Height * 0.012,
+                                              height: 10,
                                               width: main_Width * 0.4,
                                               decoration: BoxDecoration(
                                                 color: Color(0xFF525770),
@@ -394,7 +399,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
                                           ),
                                           15.heightBox,
                                           Container(
-                                            height: main_Height * 0.012,
+                                            height: 10,
                                             width: main_Width * 0.4,
                                             decoration: BoxDecoration(
                                               color: Color(0xFF525770),
@@ -436,6 +441,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
                                               const EdgeInsets.only(left: 120),
                                           child: Text(
                                             "128 Rating",
+                                            overflow: TextOverflow.ellipsis,
                                             style: TextStyle(
                                                 color: Colors.white,
                                                 fontSize: 14,
@@ -457,6 +463,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
                     Container(
                       padding: EdgeInsets.symmetric(horizontal: 35),
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -473,6 +480,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
                                   children: [
                                     Text(
                                       "Archibald Northbottom",
+                                      overflow: TextOverflow.ellipsis,
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontWeight: FontWeight.w500,
@@ -480,6 +488,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
                                     ),
                                     Text(
                                       "12 REVIEWS, 12 SEP 2019",
+                                      overflow: TextOverflow.ellipsis,
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontSize: 10,
@@ -508,16 +517,20 @@ class _ReviewScreenState extends State<ReviewScreen> {
                           ),
                           10.heightBox,
                           RichText(
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 4,
                               text: TextSpan(
                                   text:
                                       "Watch Molly's Game yesterday, good movie, just a little too long for me Kevin Costner was excellent, as per usual.",
                                   style: TextStyle(
                                       fontSize: 10,
+                                      color: Colors.white,
                                       fontWeight: FontWeight.w400))),
                           10.heightBox,
                           Row(children: [
                             Text(
                               "Likes: 245",
+                              overflow: TextOverflow.ellipsis,
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 12,
@@ -549,6 +562,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
                                   children: [
                                     Text(
                                       "Theodore Handle",
+                                      overflow: TextOverflow.ellipsis,
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontWeight: FontWeight.w500,
@@ -556,6 +570,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
                                     ),
                                     Text(
                                       "08 REVIEWS, 12 SEP 2019",
+                                      overflow: TextOverflow.ellipsis,
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontSize: 10,
@@ -573,6 +588,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
                                   ),
                                   Text(
                                     "(4.5)",
+                                    overflow: TextOverflow.ellipsis,
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 8,
@@ -584,6 +600,8 @@ class _ReviewScreenState extends State<ReviewScreen> {
                           ),
                           10.heightBox,
                           RichText(
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 4,
                               text: TextSpan(
                                   text:
                                       "Parking can be an issue and the neighborhood needs a little TLC, but the venue itself is excellent, if not a bit stuffy. The only real issues occur in the surrounding area, which unfortunately cannot be divorced from the venue, but the place is great.",
@@ -594,6 +612,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
                           Row(children: [
                             Text(
                               "Likes: 198",
+                              overflow: TextOverflow.ellipsis,
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 12,
@@ -625,6 +644,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
                                   children: [
                                     Text(
                                       "Alan Fresco",
+                                      overflow: TextOverflow.ellipsis,
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontWeight: FontWeight.w500,
@@ -632,6 +652,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
                                     ),
                                     Text(
                                       "11 REVIEWS, 13 SEP 2019",
+                                      overflow: TextOverflow.ellipsis,
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontSize: 10,
@@ -649,6 +670,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
                                   ),
                                   Text(
                                     "(4.2)",
+                                    overflow: TextOverflow.ellipsis,
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 8,
@@ -660,6 +682,8 @@ class _ReviewScreenState extends State<ReviewScreen> {
                           ),
                           10.heightBox,
                           RichText(
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 4,
                               text: TextSpan(
                                   text:
                                       "This theater is vintage and locally owned. Conveniently located on grand near lake Merritt, it's easy to get to and has plenty of showings and movies to choose from. I love supporting this theater whenever I can. It has old fashioned art and is decorated like a vintage theater.",
@@ -736,6 +760,8 @@ class _ReviewScreenState extends State<ReviewScreen> {
                           ),
                           10.heightBox,
                           RichText(
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 4,
                               text: TextSpan(
                                   text:
                                       "This theater is vintage and locally owned. Conveniently located on grand near lake Merritt, it's easy to get to and has plenty of showings and movies to choose from. I love supporting this theater whenever I can. It has old fashioned art and is decorated like a vintage theater.",
@@ -757,33 +783,6 @@ class _ReviewScreenState extends State<ReviewScreen> {
                     ),
                     20.heightBox,
                     Divider(),
-                    10.heightBox,
-                    Container(
-                      width: main_Width * 0.70,
-                      decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(100)),
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment(0.8, 1),
-                          colors: [Color(0xFFFB6E37), Color(0xFF7D37FB)],
-                          tileMode: TileMode.mirror,
-                        ),
-                      ),
-                      child: TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => PaymentScreen()));
-                          },
-                          child: Text(
-                            "Book",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20),
-                          )),
-                    ),
                     20.heightBox,
                     Container(
                       width: main_Width * 0.70,
@@ -801,7 +800,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => TicketBooking()));
+                                    builder: (context) => Ticketbookingnon()));
                           },
                           child: Text(
                             "Select Seat",

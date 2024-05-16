@@ -2,17 +2,17 @@ import 'dart:math';
 
 import 'package:easy_date_timeline/easy_date_timeline.dart';
 import 'package:flutter/material.dart';
-import 'package:vanshtask1/Screens/TicketScreen/payment_screen.dart';
+import 'package:vanshtask1/Screens/TicketScreen/ticket_booking.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class TicketBooking extends StatefulWidget {
-  const TicketBooking({super.key});
+class Ticketbookingnon extends StatefulWidget {
+  const Ticketbookingnon({super.key});
 
   @override
-  State<TicketBooking> createState() => _TicketBookingState();
+  State<Ticketbookingnon> createState() => _TicketbookingnonState();
 }
 
-class _TicketBookingState extends State<TicketBooking> {
+class _TicketbookingnonState extends State<Ticketbookingnon> {
   final List<bool> _selectedVegetables = <bool>[false, true, false];
   List<Widget> vegetables = <Widget>[
     // Text(''),
@@ -29,18 +29,6 @@ class _TicketBookingState extends State<TicketBooking> {
   }
 
   bool vertical = false;
-
-  bool box = true;
-  bool box2 = false;
-  bool box3 = false;
-  bool box4 = false;
-  bool box5 = true;
-  bool box6 = false;
-  bool box7 = false;
-  bool box8 = false;
-  bool box9 = true;
-  bool box10 = false;
-  bool box11 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -91,7 +79,7 @@ class _TicketBookingState extends State<TicketBooking> {
                     Padding(
                       padding: const EdgeInsets.only(left: 20),
                       child: Container(
-                        height: 130,
+                        height: main_Height * 0.15,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.horizontal(
                             left: Radius.circular(30),
@@ -151,7 +139,7 @@ class _TicketBookingState extends State<TicketBooking> {
                     Padding(
                       padding: const EdgeInsets.only(left: 20),
                       child: Container(
-                        height: 230,
+                        height: main_Height * 0.27,
                         decoration: BoxDecoration(
                             color: Color(0xff2e3350),
                             borderRadius: BorderRadius.horizontal(
@@ -165,131 +153,87 @@ class _TicketBookingState extends State<TicketBooking> {
                               children: [
                                 GestureDetector(
                                   onTap: () {
-                                    setState(() {
-                                      box = !box;
-                                    });
+                                    // setState(() {
+                                    //   box = !box;
+                                    // });
                                   },
-                                  child: Stack(
-                                    alignment: box
-                                        ? Alignment.centerRight
-                                        : Alignment.centerLeft,
-                                    children: [
-                                      Container(
-                                        width: main_Width * 0.22,
-                                        height: 50,
-                                        alignment: Alignment
-                                            .center, // Alignment as center
-                                        decoration: BoxDecoration(
-                                          // TODO: you can change here gradient color
-                                          gradient: LinearGradient(
-                                            colors: box
-                                                ? [
-                                                    const Color(0xFFF09869),
-                                                    const Color(0xFFC729B2),
-                                                  ]
-                                                : [
-                                                    Color(0xff1f203c),
-                                                    Color(0xff1f203c)
-                                                  ],
-                                          ),
-                                          borderRadius: const BorderRadius.all(
-                                              Radius.circular(20)),
-                                        ),
-                                        child: Text(
-                                          "3D",
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.bold),
-                                        ),
+                                  child: Container(
+                                    width: main_Width * 0.22,
+                                    height: main_Height * 0.06,
+                                    alignment:
+                                        Alignment.center, // Alignment as center
+                                    decoration: BoxDecoration(
+                                      // TODO: you can change here gradient color
+                                      gradient: LinearGradient(
+                                        colors: [
+                                          Color(0xff1f203c),
+                                          Color(0xff1f203c)
+                                        ],
                                       ),
-                                    ],
+                                      borderRadius: const BorderRadius.all(
+                                          Radius.circular(20)),
+                                    ),
+                                    child: Text(
+                                      "3D",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold),
+                                    ),
                                   ),
                                 ),
                                 GestureDetector(
-                                  onTap: () {
-                                    setState(() {
-                                      box2 = !box2;
-                                    });
-                                  },
-                                  child: Stack(
-                                    alignment: box2
-                                        ? Alignment.centerRight
-                                        : Alignment.centerLeft,
-                                    children: [
-                                      Container(
-                                        width: main_Width * 0.30,
-                                        height: 50,
-                                        alignment: Alignment
-                                            .center, // Alignment as center
-                                        decoration: BoxDecoration(
-                                          // TODO: you can change here gradient color
-                                          gradient: LinearGradient(
-                                            colors: box2
-                                                ? [
-                                                    const Color(0xFFF09869),
-                                                    const Color(0xFFC729B2),
-                                                  ]
-                                                : [
-                                                    Color(0xff1f203c),
-                                                    Color(0xff1f203c)
-                                                  ],
-                                          ),
-                                          borderRadius: const BorderRadius.all(
-                                              Radius.circular(20)),
-                                        ),
-                                        child: Text(
-                                          "MX4D",
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.bold),
-                                        ),
+                                  onTap: () {},
+                                  child: Container(
+                                    width: main_Width * 0.30,
+                                    height: main_Height * 0.06,
+                                    alignment:
+                                        Alignment.center, // Alignment as center
+                                    decoration: BoxDecoration(
+                                      // TODO: you can change here gradient color
+                                      gradient: LinearGradient(
+                                        colors: [
+                                          Color(0xff1f203c),
+                                          Color(0xff1f203c)
+                                        ],
                                       ),
-                                    ],
+                                      borderRadius: const BorderRadius.all(
+                                          Radius.circular(20)),
+                                    ),
+                                    child: Text(
+                                      "MX4D",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold),
+                                    ),
                                   ),
                                 ),
                                 GestureDetector(
-                                  onTap: () {
-                                    setState(() {
-                                      box3 = !box3;
-                                    });
-                                  },
-                                  child: Stack(
-                                    alignment: box3
-                                        ? Alignment.centerRight
-                                        : Alignment.centerLeft,
-                                    children: [
-                                      Container(
-                                        width: main_Width * 0.30,
-                                        height: 50,
-                                        alignment: Alignment
-                                            .center, // Alignment as center
-                                        decoration: BoxDecoration(
-                                          // TODO: you can change here gradient color
-                                          gradient: LinearGradient(
-                                            colors: box3
-                                                ? [
-                                                    const Color(0xFFF09869),
-                                                    const Color(0xFFC729B2),
-                                                  ]
-                                                : [
-                                                    Color(0xff1f203c),
-                                                    Color(0xff1f203c)
-                                                  ],
-                                          ),
-                                          borderRadius: const BorderRadius.all(
-                                              Radius.circular(20)),
-                                        ),
-                                        child: Text(
-                                          "IMAX'3D",
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.bold),
-                                        ),
+                                  onTap: () {},
+                                  child: Container(
+                                    width: main_Width * 0.30,
+                                    height: main_Height * 0.06,
+                                    alignment:
+                                        Alignment.center, // Alignment as center
+                                    decoration: BoxDecoration(
+                                      // TODO: you can change here gradient color
+                                      gradient: LinearGradient(
+                                        colors: [
+                                          Color(0xff1f203c),
+                                          Color(0xff1f203c)
+                                        ],
                                       ),
-                                    ],
+                                      borderRadius: const BorderRadius.all(
+                                          Radius.circular(20)),
+                                    ),
+                                    child: Text(
+                                      "IMAX'3D",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold),
+                                    ),
                                   ),
                                 ),
                               ],
@@ -299,7 +243,7 @@ class _TicketBookingState extends State<TicketBooking> {
                               children: [
                                 Padding(padding: EdgeInsets.only(left: 20)),
                                 Text(
-                                  "Palace albany theatre",
+                                  "Palace Albany Theatre",
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 16,
@@ -312,28 +256,19 @@ class _TicketBookingState extends State<TicketBooking> {
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 GestureDetector(
-                                  onTap: () {
-                                    setState(() {
-                                      box4 = !box4;
-                                    });
-                                  },
+                                  onTap: () {},
                                   child: Container(
                                     width: main_Width * 0.20,
-                                    height: 70,
+                                    height: main_Height * 0.08,
                                     alignment:
                                         Alignment.center, // Alignment as center
                                     decoration: BoxDecoration(
                                       // TODO: you can change here gradient color
                                       gradient: LinearGradient(
-                                        colors: box4
-                                            ? [
-                                                const Color(0xFFF09869),
-                                                const Color(0xFFC729B2),
-                                              ]
-                                            : [
-                                                Color(0xff1f203c),
-                                                Color(0xff1f203c)
-                                              ],
+                                        colors: [
+                                          Color(0xff1f203c),
+                                          Color(0xff1f203c)
+                                        ],
                                       ),
                                       borderRadius: const BorderRadius.all(
                                           Radius.circular(15)),
@@ -361,28 +296,19 @@ class _TicketBookingState extends State<TicketBooking> {
                                   ),
                                 ),
                                 GestureDetector(
-                                  onTap: () {
-                                    setState(() {
-                                      box5 = !box5;
-                                    });
-                                  },
+                                  onTap: () {},
                                   child: Container(
                                     width: main_Width * 0.20,
-                                    height: 70,
+                                    height: main_Height * 0.08,
                                     alignment:
                                         Alignment.center, // Alignment as center
                                     decoration: BoxDecoration(
                                       // TODO: you can change here gradient color
                                       gradient: LinearGradient(
-                                        colors: box5
-                                            ? [
-                                                const Color(0xFFF09869),
-                                                const Color(0xFFC729B2),
-                                              ]
-                                            : [
-                                                Color(0xff1f203c),
-                                                Color(0xff1f203c)
-                                              ],
+                                        colors: [
+                                          Color(0xff1f203c),
+                                          Color(0xff1f203c)
+                                        ],
                                       ),
                                       borderRadius: const BorderRadius.all(
                                           Radius.circular(15)),
@@ -410,28 +336,19 @@ class _TicketBookingState extends State<TicketBooking> {
                                   ),
                                 ),
                                 GestureDetector(
-                                  onTap: () {
-                                    setState(() {
-                                      box6 = !box6;
-                                    });
-                                  },
+                                  onTap: () {},
                                   child: Container(
                                     width: main_Width * 0.20,
-                                    height: 70,
+                                    height: main_Height * 0.08,
                                     alignment:
                                         Alignment.center, // Alignment as center
                                     decoration: BoxDecoration(
                                       // TODO: you can change here gradient color
                                       gradient: LinearGradient(
-                                        colors: box6
-                                            ? [
-                                                const Color(0xFFF09869),
-                                                const Color(0xFFC729B2),
-                                              ]
-                                            : [
-                                                Color(0xff1f203c),
-                                                Color(0xff1f203c)
-                                              ],
+                                        colors: [
+                                          Color(0xff1f203c),
+                                          Color(0xff1f203c)
+                                        ],
                                       ),
                                       borderRadius: const BorderRadius.all(
                                           Radius.circular(15)),
@@ -459,28 +376,19 @@ class _TicketBookingState extends State<TicketBooking> {
                                   ),
                                 ),
                                 GestureDetector(
-                                  onTap: () {
-                                    setState(() {
-                                      box7 = !box7;
-                                    });
-                                  },
+                                  onTap: () {},
                                   child: Container(
                                     width: main_Width * 0.20,
-                                    height: 70,
+                                    height: main_Height * 0.08,
                                     alignment:
                                         Alignment.center, // Alignment as center
                                     decoration: BoxDecoration(
                                       // TODO: you can change here gradient color
                                       gradient: LinearGradient(
-                                        colors: box7
-                                            ? [
-                                                const Color(0xFFF09869),
-                                                const Color(0xFFC729B2),
-                                              ]
-                                            : [
-                                                Color(0xff1f203c),
-                                                Color(0xff1f203c)
-                                              ],
+                                        colors: [
+                                          Color(0xff1f203c),
+                                          Color(0xff1f203c)
+                                        ],
                                       ),
                                       borderRadius: const BorderRadius.all(
                                           Radius.circular(15)),
@@ -530,7 +438,7 @@ class _TicketBookingState extends State<TicketBooking> {
                     Padding(
                       padding: const EdgeInsets.only(left: 20),
                       child: Container(
-                        height: 110,
+                        height: main_Height * 0.12,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.horizontal(
                               left: Radius.circular(15)),
@@ -540,28 +448,19 @@ class _TicketBookingState extends State<TicketBooking> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  box8 = !box8;
-                                });
-                              },
+                              onTap: () {},
                               child: Container(
                                 width: main_Width * 0.20,
-                                height: 70,
+                                height: main_Height * 0.08,
                                 alignment:
                                     Alignment.center, // Alignment as center
                                 decoration: BoxDecoration(
                                   // TODO: you can change here gradient color
                                   gradient: LinearGradient(
-                                    colors: box8
-                                        ? [
-                                            const Color(0xFFF09869),
-                                            const Color(0xFFC729B2),
-                                          ]
-                                        : [
-                                            Color(0xff1f203c),
-                                            Color(0xff1f203c)
-                                          ],
+                                    colors: [
+                                      Color(0xff1f203c),
+                                      Color(0xff1f203c)
+                                    ],
                                   ),
                                   borderRadius: const BorderRadius.all(
                                       Radius.circular(15)),
@@ -598,28 +497,19 @@ class _TicketBookingState extends State<TicketBooking> {
                               ),
                             ),
                             GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  box9 = !box9;
-                                });
-                              },
+                              onTap: () {},
                               child: Container(
                                 width: main_Width * 0.20,
-                                height: 70,
+                                height: main_Height * 0.08,
                                 alignment:
                                     Alignment.center, // Alignment as center
                                 decoration: BoxDecoration(
                                   // TODO: you can change here gradient color
                                   gradient: LinearGradient(
-                                    colors: box9
-                                        ? [
-                                            const Color(0xFFF09869),
-                                            const Color(0xFFC729B2),
-                                          ]
-                                        : [
-                                            Color(0xff1f203c),
-                                            Color(0xff1f203c)
-                                          ],
+                                    colors: [
+                                      Color(0xff1f203c),
+                                      Color(0xff1f203c)
+                                    ],
                                   ),
                                   borderRadius: const BorderRadius.all(
                                       Radius.circular(15)),
@@ -656,29 +546,21 @@ class _TicketBookingState extends State<TicketBooking> {
                               ),
                             ),
                             GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  box10 = !box10;
-                                });
-                              },
+                              onTap: () {},
                               child: Container(
                                 width: main_Width * 0.20,
-                                height: 70,
+                                height: main_Height * 0.08,
                                 alignment:
                                     Alignment.center, // Alignment as center
                                 decoration: BoxDecoration(
                                   // TODO: you can change here gradient color
                                   gradient: LinearGradient(
-                                    colors: box10
-                                        ? [
-                                            const Color(0xFFF09869),
-                                            const Color(0xFFC729B2),
-                                          ]
-                                        : [
-                                            Color(0xff1f203c),
-                                            Color(0xff1f203c)
-                                          ],
+                                    colors: [
+                                      Color(0xff1f203c),
+                                      Color(0xff1f203c)
+                                    ],
                                   ),
+
                                   borderRadius: const BorderRadius.all(
                                       Radius.circular(15)),
                                 ),
@@ -714,28 +596,19 @@ class _TicketBookingState extends State<TicketBooking> {
                               ),
                             ),
                             GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  box11 = !box11;
-                                });
-                              },
+                              onTap: () {},
                               child: Container(
                                 width: main_Width * 0.20,
-                                height: 70,
+                                height: main_Height * 0.08,
                                 alignment:
                                     Alignment.center, // Alignment as center
                                 decoration: BoxDecoration(
                                   // TODO: you can change here gradient color
                                   gradient: LinearGradient(
-                                    colors: box11
-                                        ? [
-                                            const Color(0xFFF09869),
-                                            const Color(0xFFC729B2),
-                                          ]
-                                        : [
-                                            Color(0xff1f203c),
-                                            Color(0xff1f203c)
-                                          ],
+                                    colors: [
+                                      Color(0xff1f203c),
+                                      Color(0xff1f203c)
+                                    ],
                                   ),
                                   borderRadius: const BorderRadius.all(
                                       Radius.circular(15)),
@@ -785,7 +658,7 @@ class _TicketBookingState extends State<TicketBooking> {
                           Row(
                             children: [
                               Container(
-                                height: 25,
+                                height: main_Height * 0.03,
                                 width: main_Width * 0.08,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
@@ -793,7 +666,7 @@ class _TicketBookingState extends State<TicketBooking> {
                               ),
                               10.widthBox,
                               Text(
-                                "Reserved",
+                                "RESERVED",
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 10,
@@ -804,7 +677,7 @@ class _TicketBookingState extends State<TicketBooking> {
                           Row(
                             children: [
                               Container(
-                                height: 25,
+                                height: main_Height * 0.03,
                                 width: main_Width * 0.08,
                                 decoration: BoxDecoration(
                                     border: Border.all(color: Colors.white),
@@ -812,7 +685,7 @@ class _TicketBookingState extends State<TicketBooking> {
                               ),
                               10.widthBox,
                               Text(
-                                "Available",
+                                "AVAILABLE",
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 10,
@@ -823,7 +696,7 @@ class _TicketBookingState extends State<TicketBooking> {
                           Row(
                             children: [
                               Container(
-                                height: 25,
+                                height: main_Height * 0.03,
                                 width: main_Width * 0.08,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
@@ -834,7 +707,7 @@ class _TicketBookingState extends State<TicketBooking> {
                               ),
                               10.widthBox,
                               Text(
-                                "Selected",
+                                "SELECTED",
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 10,
@@ -848,7 +721,7 @@ class _TicketBookingState extends State<TicketBooking> {
                     Padding(
                       padding: EdgeInsets.all(16),
                       child: Container(
-                        height: 230,
+                        height: main_Height * 0.35,
                         width: main_Width * 0.70,
                         child: GridView.builder(
                           gridDelegate:
@@ -901,7 +774,7 @@ class _TicketBookingState extends State<TicketBooking> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => PaymentScreen()));
+                                      builder: (context) => TicketBooking()));
                             },
                             child: Text(
                               "Choose your seats",

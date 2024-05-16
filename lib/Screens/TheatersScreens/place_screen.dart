@@ -66,29 +66,23 @@ class _TheaterPlaceState extends State<TheaterPlace> {
                   ],
                 ),
                 Container(
-                  width: main_Width * 0.12,
-                  margin: EdgeInsets.only(right: 15, top: 5),
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment(0.8, 1),
-                      colors: [Color(0xFFFB6E37), Color(0xFF7D37FB)],
-                      tileMode: TileMode.mirror,
+                    margin: EdgeInsets.only(right: 15, top: 5),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment(0.8, 1),
+                        colors: [Color(0xFFFB6E37), Color(0xFF7D37FB)],
+                        tileMode: TileMode.mirror,
+                      ),
                     ),
-                    borderRadius: BorderRadius.circular(25.0),
-                  ),
-                  child: TextField(
-                    decoration: InputDecoration(
-                        border: InputBorder.none,
-                        prefixIcon: IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.search,
-                              color: Colors.white,
-                              size: 28,
-                            ))),
-                  ),
-                ),
+                    child: IconButton(
+                        onPressed: () {},
+                        icon: Icon(
+                          Icons.search,
+                          color: Colors.white,
+                          size: 28,
+                        ))),
               ],
             ),
           ),
@@ -98,96 +92,129 @@ class _TheaterPlaceState extends State<TheaterPlace> {
             child: Column(
               children: [
                 Container(
-                  decoration: BoxDecoration(
-                      color: Color(0xff2e3350),
-                      borderRadius:
-                          BorderRadius.vertical(bottom: Radius.circular(20))),
-                  child: Column(children: [
-                    InkWell(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => MovieTheaterInfo()));
-                      },
-                      child: SingleChildScrollView(
+                  color: Color(0xff1f203c),
+                  child: Stack(
+                    children: [
+                      Positioned(
+                          child: Container(
+                        height: 220,
+                        decoration: BoxDecoration(
+                            color: Color(0xff2e3350),
+                            borderRadius: BorderRadius.vertical(
+                                bottom: Radius.circular(20))),
+                      )),
+                      Positioned(
                         child: Container(
-                            height: main_Height * 0.42,
-                            child: ListView.builder(
-                              scrollDirection: Axis.horizontal,
-                              itemCount: 1,
-                              itemBuilder: (BuildContext context, int index) {
-                                return Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: <Widget>[
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 35),
-                                      child: Container(
-                                        margin: EdgeInsets.only(top: 20),
-                                        width: main_Width * 0.80,
-                                        height: main_Height * 0.30,
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(30),
-                                          image: DecorationImage(
-                                            image: AssetImage(Birds),
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    SizedBox(height: 8.0),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 35),
-                                      child: Text(
-                                        "Palace Albany Theater",
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 16),
-                                      ),
-                                    ),
-                                    Row(
-                                      children: [
-                                        Padding(
-                                            padding: EdgeInsets.only(left: 35)),
-                                        Text(
-                                          "3D Digital Media & Ultra HD",
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 14),
-                                        ),
-                                        50.widthBox,
-                                        Row(
-                                          children: [
-                                            Icon(
-                                              Icons.star,
-                                              color: Colors.amber,
-                                              size: 12,
-                                            ),
-                                            Text(
-                                              "4.8",
-                                              style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 14,
-                                                  fontWeight: FontWeight.bold),
-                                            ),
-                                          ],
-                                        )
-                                            .box
-                                            .roundedSM
-                                            .border(color: Colors.white)
-                                            .make()
-                                      ],
-                                    )
-                                  ],
-                                );
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.vertical(
+                                  bottom: Radius.circular(20))),
+                          child: Column(children: [
+                            // 30.heightBox,
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            MovieTheaterInfo()));
                               },
-                            )),
+                              child: SingleChildScrollView(
+                                child: Container(
+                                    height: 330,
+                                    child: ListView.builder(
+                                      scrollDirection: Axis.horizontal,
+                                      itemCount: 1,
+                                      itemBuilder:
+                                          (BuildContext context, int index) {
+                                        return Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            20.heightBox,
+                                            Container(
+                                              margin: EdgeInsets.only(left: 40),
+                                              width: main_Width * 0.80,
+                                              height: 258,
+                                              decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(30),
+                                                image: DecorationImage(
+                                                  image: AssetImage(Birds),
+                                                  fit: BoxFit.cover,
+                                                ),
+                                              ),
+                                            ),
+                                            SizedBox(height: 8.0),
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 35),
+                                              child: Row(
+                                                children: [
+                                                  Text(
+                                                    "Palace Albany Theater",
+                                                    maxLines: 1,
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
+                                                    style: TextStyle(
+                                                        color: Colors.white,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontSize: 16),
+                                                  ),
+                                                  100.widthBox,
+                                                  Row(
+                                                    children: [
+                                                      Icon(
+                                                        Icons.star,
+                                                        color: Colors.amber,
+                                                        size: 12,
+                                                      ),
+                                                      Text(
+                                                        "4.8",
+                                                        style: TextStyle(
+                                                            color: Colors.white,
+                                                            fontSize: 14,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .bold),
+                                                      ),
+                                                    ],
+                                                  )
+                                                      .box
+                                                      .roundedSM
+                                                      .border(
+                                                          color: Colors.white)
+                                                      .make()
+                                                ],
+                                              ),
+                                            ),
+                                            Row(
+                                              children: [
+                                                Padding(
+                                                    padding: EdgeInsets.only(
+                                                        left: 35)),
+                                                Text(
+                                                  "3D Digital Media & Ultra HD",
+                                                  maxLines: 1,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
+                                                  style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 14,fontWeight: FontWeight.w400),
+                                                ),
+                                              ],
+                                            )
+                                          ],
+                                        );
+                                      },
+                                    )),
+                              ),
+                            ),
+                          ]),
+                        ),
                       ),
-                    ),
-                  ]),
+                    ],
+                  ),
                 ),
                 20.heightBox,
                 Divider(
@@ -200,6 +227,7 @@ class _TheaterPlaceState extends State<TheaterPlace> {
                     Text(
                       "Related Theaters",
                       style: TextStyle(
+                        overflow: TextOverflow.ellipsis,
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                           fontSize: 18),
@@ -208,7 +236,7 @@ class _TheaterPlaceState extends State<TheaterPlace> {
                 ),
                 10.heightBox,
                 Container(
-                  height: main_Height * 0.43,
+                  height: 285,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: images.length,
@@ -220,7 +248,7 @@ class _TheaterPlaceState extends State<TheaterPlace> {
                           children: [
                             Container(
                               width: main_Width * 0.40,
-                              height: main_Height * 0.28,
+                              height: 230,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(30),
                                 image: DecorationImage(
@@ -232,6 +260,8 @@ class _TheaterPlaceState extends State<TheaterPlace> {
                             8.heightBox,
                             Text(
                               names[index],
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
@@ -241,14 +271,16 @@ class _TheaterPlaceState extends State<TheaterPlace> {
                               children: [
                                 Text(
                                   rating[index],
+                                  overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 14),
+                                      color: Colors.white, fontWeight: FontWeight.w400,fontSize: 14),
                                 ),
                                 10.widthBox,
                                 Row(
                                   children: [
                                     Text(
                                       "4.3",
+                                      overflow: TextOverflow.ellipsis,
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontWeight: FontWeight.bold),

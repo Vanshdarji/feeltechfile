@@ -23,8 +23,7 @@ class _MovieTheaterInfoState extends State<MovieTheaterInfo> {
       body: Column(
         children: [
           Container(
-            height: main_Height * 0.065,
-            width: main_Width,
+            height: 35,
             decoration: const BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
@@ -62,7 +61,7 @@ class _MovieTheaterInfoState extends State<MovieTheaterInfo> {
                   },
                   child: Container(
                     width: main_Width,
-                    height: main_Height * 0.50,
+                    height:400,
                     decoration: const BoxDecoration(
                       borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(25),
@@ -89,6 +88,7 @@ class _MovieTheaterInfoState extends State<MovieTheaterInfo> {
                             children: [
                               Text(
                                 "4.5",
+                                overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold,
@@ -114,6 +114,7 @@ class _MovieTheaterInfoState extends State<MovieTheaterInfo> {
                             Padding(padding: EdgeInsets.only(left: 40)),
                             Text(
                               "Palace Albany Theater",
+                              overflow: TextOverflow.ellipsis,
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
@@ -127,8 +128,9 @@ class _MovieTheaterInfoState extends State<MovieTheaterInfo> {
                             Padding(padding: EdgeInsets.only(left: 40)),
                             Text(
                               "3D, Digital Media & Ultra HD",
+                              overflow: TextOverflow.ellipsis,
                               style:
-                                  TextStyle(color: Colors.white, fontSize: 12),
+                                  TextStyle(color: Colors.white, fontWeight: FontWeight.w400,fontSize: 12),
                             )
                           ],
                         ),
@@ -141,6 +143,7 @@ class _MovieTheaterInfoState extends State<MovieTheaterInfo> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         "Surprisingly, there is a very vocal faction of the design community that wants to se filler text banished to the original sources for whencecame Perhaps not surprisingly, in an era of endless quibbling, there an equally vocal contingent of designers leaping end the use of the time-honored tradition of greeking.",
@@ -212,6 +215,7 @@ class _MovieTheaterInfoState extends State<MovieTheaterInfo> {
                     children: [
                       Text(
                         "Address:",
+                        overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 13,
@@ -247,6 +251,7 @@ class _MovieTheaterInfoState extends State<MovieTheaterInfo> {
                     40.widthBox,
                     Text(
                       "(+1) 505-343-7300",
+                      overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 10,
@@ -261,15 +266,16 @@ class _MovieTheaterInfoState extends State<MovieTheaterInfo> {
                 20.heightBox,
                 Container(
                   width: main_Width * 0.85,
-                  height: main_Height * 0.25,
+                  height: 220,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(40),
                       image: DecorationImage(
-                          image: AssetImage(Birds), fit: BoxFit.cover)),
+                          image: AssetImage(Birds), fit: BoxFit.fitWidth)),
                 ),
                 10.heightBox,
                 Text(
                   "The Flying Birds",
+                  overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 18,
